@@ -1,9 +1,9 @@
 name: Build APK
-on: [push, pull_request]
+on: [push, workflow_dispatch] # أضفنا خاصية التشغيل اليدوي
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
