@@ -7,17 +7,21 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Build Prerequisites
+      - name: Install autotools and libtool
         run: |
           sudo apt-get update
-          sudo apt-get install -y autoconf automake libtool pkg-config
+          sudo apt-get install -y autoconf automake libtool libtool-bin m4 pkg-config
 
-      - name: Prepare Autotools
+      - name: Regenerate autotools files
         run: |
-          # هذه الخطوات تحل مشكلة الماكرو المفقود LT_SYS_SYMBOL_USCORE
           autoupdate || true
-          libtoolize || true
-          
+          if command -v libtoolize >/dev/null 2>&1; then 
+            libtoolize --force
+          elif command -v glibtoolize >/dev/null 2>&1; then 
+            glibtoolize --force
+          fi
+          autoreconf -fi || true
+
       - name: Build with Buildozer
         uses: ArtemGr/buildozer-action@v1
         with:
