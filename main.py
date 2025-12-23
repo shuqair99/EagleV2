@@ -1,9 +1,17 @@
-from kivy.app import App
-from kivy.uix.button import Button
+name: Build APK
+on: 
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
-class EagleApp(App):
-    def build(self):
-        return Button(text="EAGLE V2 READY")
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-if __name__ == "__main__":
-    EagleApp().run()
+      - name: Build with Buildozer
+        uses: ArtemGr/buildozer-action@v1
+        with:
+          buildozer_version: stable
+          command: android debug
