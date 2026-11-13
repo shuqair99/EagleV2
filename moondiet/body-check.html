@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffd4e5">
+  <meta name="description" content="MoonDiet Body Check — فورم المتابعة الأسبوعية التفاعلي">
+  <title>MoonDiet | Body Check 💗</title>
+  <style>
+    :root{--ink:#293b52;--muted:#738093;--rose:#f44683;--rose-light:#ffe2ec;--cream:#fffaf5;--line:#ebe6e7;--lilac:#ebe4ff;--mint:#dff8ea;--yellow:#ffeaa6;--shadow:0 20px 55px rgba(76,39,66,.13)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;min-height:100vh;background:radial-gradient(circle at 9% 10%,#fde4f1 0 16%,transparent 36%),radial-gradient(circle at 91% 20%,#fff0c7 0 9%,transparent 33%),radial-gradient(circle at 92% 95%,#dcf7e9,transparent 36%),#fff9f7;color:var(--ink);font-family:Tahoma,Arial,"Segoe UI",sans-serif;line-height:1.65}
+    .wrap{max-width:620px;margin:0 auto;padding:26px 14px 48px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:3px 6px 22px}.brand{font-weight:900;font-size:28px;letter-spacing:-1.4px;direction:ltr;line-height:1}.brand span{color:var(--rose)} .brand small{font-weight:700;display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:7px;text-transform:uppercase}.pill{background:white;padding:8px 14px;border:1px solid #f8d1df;border-radius:60px;color:#ce3872;font-size:12px;font-weight:bold;white-space:nowrap}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#ffdce9 0%,#ffecca 55%,#e6d9fe 100%);border:2px solid #fff;box-shadow:var(--shadow);border-radius:30px;padding:25px 25px 26px;isolation:isolate}.hero:before,.hero:after{content:"";border:3px solid #f15d95;opacity:.34;border-radius:50%;position:absolute;width:150px;height:150px;left:-65px;top:-70px;z-index:-1}.hero:after{width:130px;height:130px;left:auto;right:-60px;top:auto;bottom:-85px;border-color:#9972ea}.hero .tag{display:inline-flex;background:white;border-radius:12px;padding:6px 12px;color:#bf4173;font-size:12px;font-weight:bold}.hero h1{margin:13px 0 8px;font-size:clamp(24px,6vw,36px);line-height:1.36;letter-spacing:-.7px}.hero h1 em{font-style:normal;color:#eb3478}.hero p{font-size:14px;color:#5d5266;margin:0;max-width:420px}.decor{position:absolute;font-size:38px;left:25px;top:28px;transform:rotate(-13deg)}.spark{position:absolute;left:54px;bottom:8px;font-size:36px;transform:rotate(18deg)}
+    .panel{background:rgba(255,255,255,.95);box-shadow:var(--shadow);border:1px solid #fff;border-radius:28px;margin-top:17px;padding:22px}.step-header{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}.step-header strong{font-size:16px}.counter{color:var(--muted);font-size:12px;font-weight:bold;direction:ltr}.progress{height:10px;background:#f3ecf0;border-radius:20px;overflow:hidden;margin-bottom:23px}.progress i{display:block;height:100%;width:33.333%;background:linear-gradient(90deg,#f55d95,#ff9d79);border-radius:20px;transition:width .25s ease}.section-note{background:#f5f0ff;border-radius:15px;padding:10px 14px;font-size:12px;color:#6e6482;margin-bottom:20px}
+    .question{margin:0 0 24px}.question:last-child{margin-bottom:6px}.q-head{font-size:15px;font-weight:900;line-height:1.55;margin-bottom:10px}.q-sub{color:#8390a0;font-weight:normal;font-size:12px;display:block;margin-top:2px}.number{color:var(--rose);display:inline-block;margin-left:4px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}.choices .wide{grid-column:1 / -1}.option{position:relative;display:flex;align-items:center;gap:9px;min-height:57px;padding:11px 12px;border-radius:15px;border:1.5px solid #eee6eb;background:#fff;cursor:pointer;font-size:13px;font-weight:650;color:#45566c;transition:background .15s,border .15s,transform .15s;user-select:none}.option:active{transform:scale(.985)}.option.selected{background:#fff0f6;border-color:#f35c95;color:#ac2f63;box-shadow:0 0 0 1px #f7c7da inset}.option .tick{flex:0 0 20px;width:20px;height:20px;border:1.5px solid #d7cbd3;border-radius:50%;display:grid;place-items:center;font-size:12px;color:transparent;background:white}.option.selected .tick{background:#f34b88;border-color:#f34b88;color:white}.option input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}.option:focus-within{outline:2px solid #f786af;outline-offset:2px}.txt{width:100%;font:inherit;border:1.7px solid #eddfe8;border-radius:15px;outline:none;background:#fffefa;min-height:54px;padding:13px 15px;color:var(--ink);font-size:16px}.txt:focus{border-color:var(--rose);box-shadow:0 0 0 3px #ffe0ed}.error{color:#ba225b;font-size:12px;margin:8px 3px 0;display:none}.error.visible{display:block}.buttons{display:flex;gap:10px;margin-top:23px}.btn{border:0;border-radius:16px;min-height:54px;padding:13px 18px;font:inherit;font-size:15px;font-weight:900;cursor:pointer}.btn-main{background:linear-gradient(90deg,#f3387e,#ff7b83);color:white;flex:1;box-shadow:0 9px 23px rgba(243,56,126,.26)}.btn-back{color:#6f7182;background:#f5eff4;min-width:95px}.btn-secondary{background:#fff;border:1.5px solid #e9d5df;color:#ae3768}.btn:focus-visible{outline:3px solid #b19cee;outline-offset:2px}.privacy{margin:18px auto 0;text-align:center;color:#85909d;font-size:11px;max-width:510px;line-height:1.8}.hidden{display:none!important}.success-emoji{font-size:55px;text-align:center}.finish-title{text-align:center;font-size:25px;margin:6px 0 5px}.finish-sub{text-align:center;color:var(--muted);font-size:13px;margin:0 0 20px}.mission{border:1.5px dashed #eda9c9;background:linear-gradient(135deg,#fff1f6,#f2edff);border-radius:21px;padding:17px;margin-bottom:15px}.mission .mini{font-weight:900;letter-spacing:.5px;font-size:11px;color:#be3b72;direction:ltr;text-align:right}.mission h3{margin:3px 0 5px;font-size:21px}.mission p{margin:0;color:#675f71;font-size:13px}.receipt{background:#fffefa;border:1px solid #eee8e6;border-radius:16px;padding:14px;max-height:270px;overflow:auto;white-space:pre-wrap;font:12px/1.9 Tahoma,Arial,sans-serif;color:#586375;direction:rtl}.footer-note{color:#8b8993;text-align:center;font-size:11px;line-height:1.8;margin-top:17px}.tiny{font-size:11px;color:var(--muted)}
+    @media (max-width:380px){.choices{grid-template-columns:1fr}.hero{padding:23px 18px}.panel{padding:18px}.decor{font-size:28px;left:11px}.btn{font-size:13px}.topbar .pill{font-size:11px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar"><div class="brand">MOON<span>DIET</span><small>feel good • live light</small></div><div class="pill">💌 Friday Check-in</div></header>
+    <section class="hero" aria-label="عنوان الفورم">
+      <div class="decor" aria-hidden="true">💗</div><div class="spark" aria-hidden="true">✳</div>
+      <div class="tag">✨ Body Check</div>
+      <h1>الميزان قال رقمه...<br><em>بس جسمك بيقول إيه؟</em></h1>
+      <p>جاوبينا على كام اختيار بسيط، علشان نجهز أسبوع جديد يناسب جسمك ويكون أسهل في الالتزام 💕</p><p style="font-size:12px;font-weight:700;margin-top:12px">📲 الإجابات هتتبعت مباشرة لواتساب المتابعة: <span dir="ltr">01225206376</span></p>
+    </section>
+    <section class="panel" id="formPanel">
+      <div class="step-header"><strong id="stepTitle">01 / نطمن على تقدمك 💞</strong><span class="counter" id="counter">1 / 3</span></div>
+      <div class="progress" aria-label="مستوى التقدم"><i id="progress"></i></div>
+      <div class="section-note" id="stepNote">خدي راحتك، مفيش إجابات صح وغلط ✨</div>
+      <form id="survey" novalidate>
+        <div id="stepContent"></div>
+        <p class="error" id="formError" role="alert">اختاري إجابة للأسئلة المطلوبة علشان نكمّل 💗</p>
+        <nav class="buttons"><button type="button" id="backBtn" class="btn btn-back hidden">السابق</button><button type="button" id="nextBtn" class="btn btn-main">التالي ←</button></nav>
+      </form>
+    </section>
+    <section class="panel hidden" id="resultPanel" aria-live="polite">
+      <div class="success-emoji">💌✨</div><h2 class="finish-title">كده خلصنا يا قمر!</h2>
+      <p class="finish-sub">إجاباتك جاهزة تتبعت لواتساب MoonDiet 💗</p>
+      <div class="mission"><div class="mini">YOUR MOONDIET MISSION</div><h3 id="missionTitle"></h3><p id="missionDesc"></p></div>
+      <div class="q-head">📋 معاينة الإجابات</div><pre class="receipt" id="receipt"></pre>
+      <div class="buttons" style="flex-wrap:wrap"><button class="btn btn-main" id="waBtn" type="button">💚 إرسال الإجابات لـ MoonDiet</button><button class="btn btn-secondary" id="copyBtn" type="button">نسخ الإجابات</button></div>
+      <div class="buttons"><button class="btn btn-back" id="editBtn" type="button" style="flex:1">تعديل الإجابات</button><button class="btn btn-back" id="resetBtn" type="button" style="flex:1">بدء فورم جديد</button></div>
+      <p class="footer-note">بعد الضغط هتفتح محادثة MoonDiet على الرقم 01225206376 والرسالة جاهزة. اضغطي إرسال علشان توصل الإجابات.</p>
+    </section>
+    <p class="privacy">🔒 الإجابات مش بتتجمع على سيرفر من خلال الملف ده؛ بتفضل في الصفحة لحد ما تبعتيها بنفسك على واتساب MoonDiet. المعلومات الصحية اختيارية.</p>
+  </main>
+  <noscript><div style="background:#fff;padding:20px;margin:18px;border-radius:18px;text-align:center;color:#ba225b">من فضلك افتحي الملف في Chrome أو Safari مع تفعيل JavaScript علشان تظهر الأسئلة.</div></noscript>
+  <script>
+  (() => {
+    'use strict';
+    const steps=[
+      {title:'01 / نطمن على تقدمك 💞',note:'خدي راحتك، مفيش إجابات صح وغلط ✨',fields:[
+        {id:'name',title:'اسمك إيه يا قمر؟',kind:'text',placeholder:'اكتبي اسمك علشان نعرف إجاباتك'},
+        {id:'scale',title:'نتيجة ميزان الأسبوع ده كانت إيه؟',options:['وزني نزل 🎉','وزني ثابت ⚖️','وزني زاد شوية','مش متأكدة من المقارنة']},
+        {id:'body',title:'إيه أكتر تغيير لاحظتيه في جسمك؟',options:['هدومي وسعت','بطني أخف والانتفاخ أقل','طاقتي اتحسنت','مش حاسة بفرق واضح','حاسّة بانتفاخ أو احتباس سوائل'], optional:true}
+      ]},
+      {title:'02 / نفهم أسبوعك 🍓',note:'الإجابات دي هتساعدنا نظبط الشبع والمرونة في نظامك.',fields:[
+        {id:'hunger',title:'الجوع كان بيظهر عندك إمتى؟',options:['بعد الفطار','قبل الغدا','بعد الغدا','بالليل','كنت شبعانة معظم اليوم']},
+        {id:'challenge',title:'أكتر حاجة صعّبت عليكي الالتزام؟',options:['الوقت وتحضير الوجبات','الجوع','الزهق من الأصناف','الخروجات والعزومات','الضغط النفسي','الأسبوع كان سهل الحمد لله']},
+        {id:'adherence',title:'تقيّمي التزامك الأسبوع ده إزاي؟',options:['ممتازة 🌟','كويسة مع شوية لخبطات','تقريبًا نص الأسبوع','الأسبوع كان صعب']},
+        {id:'cravings',title:'كنتِ بتشتهي إيه أكتر؟',options:['حلويات','عيش أو نشويات','مقرمشات وتسالي','أكل متأخر بالليل','مفيش اشتهاء ملحوظ'],optional:true}
+      ]},
+      {title:'03 / نجهز أسبوعك الجديد ✨',note:'اختياراتك هتساعدنا نعمل تغيير مفيد ليكي، مش حرمان.',fields:[
+        {id:'sleep',title:'نومك الأسبوع ده كان عامل إيه؟',options:['منتظم ومريح','متقطع','ساعات قليلة']},
+        {id:'movement',title:'حركتك كانت عاملة إيه؟',options:['بحرك جسمي بشكل منتظم','حركة بسيطة','تقريبًا مفيش حركة']},
+        {id:'factors',title:'في حاجة ممكن تكون أثرت على الميزان؟',kind:'multi',optional:true,options:['الدورة الشهرية قريبة أو موجودة','إمساك','أكل مالح أو وجبات بره','تغيير أدوية أو ظرف صحي','مفيش','أفضل عدم الإجابة']},
+        {id:'meal',title:'أنهي وجبة حابة ننوعها أكتر؟',options:['الفطار','الغدا','العشا','السناكس','مبسوطة من الوجبات الحالية']},
+        {id:'wish',title:'لو هتختاري ميزة واحدة للنظام الجديد؟',options:['وجبات تشبع أكتر','وصفات جديدة ولذيذة','أكل بيت سهل وسريع','مرونة أكبر','جدول واضح وبسيط']},
+        {id:'mission',title:'اختاري عادة واحدة تركزي عليها الأسبوع الجاي 🎯',options:['أظبط مواعيد أكلي','أتحرك يوميًا حسب قدرتي','أنام بشكل أفضل','أجهز وجباتي بدري','أقلل الأكل العشوائي بين الوجبات']}
+      ]}
+    ];
+    const custom={down:{title:'إيه أكتر حاجة ساعدتك الأسبوع ده؟',options:['تنظيم الوجبات','الشبع من الأكل','التحضير بدري','الحركة','الدعم والمتابعة']},same:{title:'مع ثبات الميزان، إيه اللي اتحسن عندك؟',options:['التزامي أحسن','هدومي أو قياساتي','طاقتي أو نومي','لسه مش ملاحظة تغيير','الأسبوع كان فيه ظروف']},up:{title:'إيه أكتر حاجة محتاجة نراعيها الأسبوع الجاي؟',options:['الجوع','الخروجات واللخبطة','النوم أو الضغط','الانتفاخ أو الإمساك','عايزة مراجعة بسيطة للنظام']},unknown:{title:'إيه أهم حاجة بالنسبة لك الأسبوع الجاي؟',options:['ألتزم بشكل أسهل','أشبع أكتر','أتحرك أكتر','أنوع أكلي','أتابع تقدمي بشكل أوضح']}};
+    const branchMap={'وزني نزل 🎉':'down','وزني ثابت ⚖️':'same','وزني زاد شوية':'up','مش متأكدة من المقارنة':'unknown'};
+    const values={}; let currentStep=0;
+    const $=(id)=>document.getElementById(id);
+    const esc=(s)=>String(s??'').replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function fieldsAt(index){const fields=steps[index].fields.slice();if(index===2){const kind=branchMap[values.scale]||'unknown';fields.push({id:'branch',title:custom[kind].title,options:custom[kind].options,optional:true})}return fields}
+    function renderField(f,i){const val=values[f.id];const q=`<div class="q-head"><span class="number">${i+1}.</span> ${esc(f.title)} ${f.optional?'<span class="q-sub">اختياري — تقدري تتخطيه</span>':''}</div>`;
+      if(f.kind==='text')return `<section class="question" data-field="${f.id}">${q}<input class="txt" name="${f.id}" id="nameField" type="text" maxlength="60" autocomplete="name" placeholder="${esc(f.placeholder)}" value="${esc(val||'')}"></section>`;
+      const vals=Array.isArray(val)?val:[];
+      return `<section class="question" data-field="${f.id}">${q}<div class="choices" role="group" aria-label="${esc(f.title)}">${f.options.map((o,j)=>{const selected=(f.kind==='multi'?vals.includes(o):val===o);return `<label class="option ${selected?'selected':''} ${(f.options.length%2!==0&&j===f.options.length-1)?'wide':''}"><input type="${f.kind==='multi'?'checkbox':'radio'}" name="${f.id}" value="${esc(o)}" ${selected?'checked':''}><span class="tick">✓</span><span>${esc(o)}</span></label>`}).join('')}</div></section>`;
+    }
+    function redraw(){const step=steps[currentStep];$('stepTitle').textContent=step.title;$('counter').textContent=(currentStep+1)+' / '+steps.length;$('progress').style.width=((currentStep+1)/steps.length*100)+'%';$('stepNote').textContent=step.note;$('stepContent').innerHTML=fieldsAt(currentStep).map(renderField).join('');$('backBtn').classList.toggle('hidden',currentStep===0);$('nextBtn').textContent=currentStep===steps.length-1?'✨ جهزي إجاباتي':'كمّلي ←';$('formError').classList.remove('visible');}
+    function save(){const stepFields=fieldsAt(currentStep);for(const f of stepFields){if(f.kind==='text'){values[f.id]=($('nameField')?.value||'').trim();continue}const checked=Array.from(document.querySelectorAll(`input[name="${f.id}"]:checked`)).map(n=>n.value);values[f.id]=f.kind==='multi'?checked:(checked[0]||'')} }
+    function valid(){for(const f of fieldsAt(currentStep)){if(f.optional)continue;const v=values[f.id];if(!v||(Array.isArray(v)&&v.length===0)){const field=document.querySelector(`[data-field="${f.id}"]`);field?.scrollIntoView({behavior:'smooth',block:'center'});$('formError').textContent=f.kind==='text'?'اكتبي اسمك علشان نعرف إنتِ مين 💗':'في سؤال محتاج اختيار قبل ما نكمل 💗';$('formError').classList.add('visible');return false}}return true}
+    function mission(){if(values.hunger!=='كنت شبعانة معظم اليوم' && values.hunger){return ['Full & Happy 🍓','هنركز على الشبع وتوزيع الوجبات بشكل أريح ليكي.']}if(values.adherence==='الأسبوع كان صعب'||values.adherence==='تقريبًا نص الأسبوع'||values.challenge==='الوقت وتحضير الوجبات'){return ['Back on Track 🌷','هنخلي اختيارات الأكل أبسط وأكثر مرونة علشان ترجعي للروتين بسهولة.']}if(values.scale==='وزني ثابت ⚖️'||values.scale==='وزني زاد شوية'){return ['Progress Check 🔎','هنراجع الروتين والقياسات والعوامل المؤثرة قبل ما نغيّر الكميات.']}return ['Keep Glowing ✨','هنحافظ على اللي ناسبك ونضيف تنويع بسيط للأسبوع الجديد.']}
+    function receiptText(){const date=new Intl.DateTimeFormat('ar-EG',{dateStyle:'medium'}).format(new Date());const ans=(id)=>Array.isArray(values[id])?values[id].join('، '):(values[id]||'—');let text=`💗 MoonDiet | Friday Body Check\n📅 ${date}\n👩 الاسم: ${ans('name')}\n\n`;
+      for(const st of steps){for(const f of st.fields){if(f.id==='name')continue;text+=`• ${f.title}\n  ${ans(f.id)}\n`}}
+      const b=custom[branchMap[values.scale]||'unknown'];text+=`• ${b.title}\n  ${ans('branch')}\n`;
+      text+=`\n🎯 ${values.mission||'—'}\n💌 ${mission()[0]}\n\nMoonDiet 💕`;return text;}
+    function result(){const [title,desc]=mission();$('missionTitle').textContent=title;$('missionDesc').textContent=desc;$('receipt').textContent=receiptText();$('formPanel').classList.add('hidden');$('resultPanel').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
+    $('stepContent').addEventListener('change', (e) => {
+      const inp = e.target;
+      if (!inp.matches('input[type=checkbox],input[type=radio]')) return;
+      const label = inp.closest('.option');
+      if (inp.type === 'radio') {
+        document.querySelectorAll(`input[name="${inp.name}"]`).forEach(n => {
+          n.closest('.option')?.classList.remove('selected');
+        });
+      }
+      label?.classList.toggle('selected', inp.checked);
+      if (inp.name === 'factors' && inp.checked) {
+        const exclusive = ['مفيش','أفضل عدم الإجابة'];
+        document.querySelectorAll('input[name="factors"]').forEach(n => {
+          if (n === inp) return;
+          if (exclusive.includes(inp.value) || exclusive.includes(n.value)) {
+            n.checked = false;
+            n.closest('.option')?.classList.remove('selected');
+          }
+        });
+      }
+      if (inp.name === 'scale') values.scale = inp.value;
+      $('formError').classList.remove('visible');
+    });
+    $('nextBtn').addEventListener('click',()=>{save();if(!valid())return;if(currentStep<steps.length-1){currentStep++;redraw();$('formPanel').scrollIntoView({behavior:'smooth',block:'start'})}else{result()}});
+    $('backBtn').addEventListener('click',()=>{save();if(currentStep>0){currentStep--;redraw();$('formPanel').scrollIntoView({behavior:'smooth',block:'start'})}});
+    $('editBtn').addEventListener('click',()=>{$('resultPanel').classList.add('hidden');$('formPanel').classList.remove('hidden');redraw();$('formPanel').scrollIntoView({behavior:'smooth'})});
+    $('resetBtn').addEventListener('click',()=>{if(!confirm('تبدئي الفورم من الأول؟ الإجابات الحالية هتتمسح من الصفحة.'))return;Object.keys(values).forEach(k=>delete values[k]);currentStep=0;$('resultPanel').classList.add('hidden');$('formPanel').classList.remove('hidden');redraw();window.scrollTo({top:0,behavior:'smooth'})});
+    $('waBtn').addEventListener('click',()=>{const url='https://wa.me/201225206376?text='+encodeURIComponent(receiptText());window.location.href=url;});
+    $('copyBtn').addEventListener('click',async()=>{let ok=false;try{await navigator.clipboard.writeText(receiptText());ok=true}catch(e){const t=document.createElement('textarea');t.value=receiptText();document.body.appendChild(t);t.select();try{ok=document.execCommand('copy')}catch(_){}t.remove()}$('copyBtn').textContent=ok?'✅ تم نسخ الإجابات':'حددي النص من المعاينة وانسخيه';if(ok)setTimeout(()=>$('copyBtn').textContent='نسخ الإجابات',2200)});
+    redraw();
+  })();
+  </script>
+</body>
+</html>
