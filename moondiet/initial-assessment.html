@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffe2ec">
+<title>MOONDIET | First Session 🌙</title>
+<style>
+:root{--ink:#293b52;--muted:#738093;--rose:#ed4b87;--cream:#fffaf7;--line:#eee5eb;--lilac:#eee8ff;--mint:#e3f7ec;--shadow:0 16px 42px rgba(76,39,66,.10)}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 8% 8%,#fde6f0,transparent 30%),radial-gradient(circle at 92% 88%,#e2f6eb,transparent 32%),var(--cream);font-family:Tahoma,Arial,sans-serif;color:var(--ink);line-height:1.65}
+.wrap{max-width:680px;margin:auto;padding:18px 13px 38px}.top{display:flex;align-items:center;justify-content:space-between;padding:6px 5px 17px}.brand{font-size:27px;font-weight:900;letter-spacing:-1px;direction:ltr}.brand span{color:var(--rose)}.brand small{display:block;font-size:9px;color:var(--muted);letter-spacing:2px;text-align:left}.pill{background:white;border:1px solid #f4d5e2;border-radius:30px;padding:7px 12px;color:#bf3e72;font-size:11px;font-weight:bold}
+.hero{background:linear-gradient(125deg,#ffdfeb,#fff0d2 56%,#e9e0ff);border:2px solid white;border-radius:25px;padding:20px 21px;box-shadow:var(--shadow);margin-bottom:14px}.tag{display:inline-block;background:#fff;border-radius:10px;padding:4px 10px;color:#bf3e72;font-size:11px;font-weight:bold}.hero h1{font-size:25px;line-height:1.4;margin:10px 0 5px}.hero p{font-size:13px;color:#635b69;margin:0}.panel{background:#fff;border:1px solid white;border-radius:24px;padding:19px;box-shadow:var(--shadow)}.head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:11px}.head strong{font-size:15px}.counter{font-size:11px;color:var(--muted);direction:ltr}.progress{height:8px;background:#f2edf1;border-radius:20px;overflow:hidden;margin-bottom:17px}.progress i{display:block;height:100%;background:linear-gradient(90deg,#f14d8b,#ffa17e);width:14.28%;transition:width .2s}.hint{background:#f5f0ff;border-radius:13px;padding:9px 12px;font-size:11px;color:#6f6682;margin-bottom:18px}.q{margin:0 0 19px}.qt{font-size:14px;font-weight:900;margin-bottom:8px;line-height:1.55}.sub{display:block;color:#87909d;font-size:11px;font-weight:normal}.opts{display:grid;grid-template-columns:1fr 1fr;gap:7px}.opt{display:flex;align-items:center;gap:8px;border:1.4px solid #eee7ec;border-radius:13px;padding:9px 10px;min-height:46px;font-size:12px;cursor:pointer;color:#48576a;background:#fff}.opt:has(input:checked){border-color:#f18bb2;background:#fff0f6;color:#a52e62}.opt input{accent-color:#ed4b87;flex:0 0 auto}.field{width:100%;border:1.5px solid #eadfe7;border-radius:13px;background:#fffefa;padding:12px;font:inherit;font-size:14px;color:var(--ink);outline:none}.field:focus{border-color:var(--rose);box-shadow:0 0 0 3px #ffe4ef}.fieldarea{min-height:75px;resize:vertical}.buttons{display:flex;gap:9px;margin-top:20px}.btn{border:0;border-radius:14px;padding:13px 15px;font:inherit;font-size:14px;font-weight:900;cursor:pointer}.mainbtn{background:linear-gradient(90deg,#ed3f81,#ff8588);color:white;flex:1;box-shadow:0 7px 18px #ed4b872b}.backbtn{background:#f4eff4;color:#707080;min-width:92px}.error{color:#bd2d62;font-size:12px;margin:8px 3px 0;display:none}.error.show{display:block}.hidden{display:none!important}.receipt{white-space:pre-wrap;direction:rtl;background:#fffdf9;border:1px solid var(--line);border-radius:14px;padding:12px;max-height:290px;overflow:auto;font:12px/1.9 Tahoma,Arial,sans-serif}.center{text-align:center}.finish{font-size:24px;margin:3px 0}.finishnote{font-size:12px;color:var(--muted);margin:0 0 16px}.foot{text-align:center;color:#87909d;font-size:11px;margin:15px 5px 0;line-height:1.8}
+@media(max-width:390px){.opts{grid-template-columns:1fr}.hero{padding:18px}.panel{padding:15px}.hero h1{font-size:22px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top"><div class="brand">MOON<span>DIET</span><small>FEEL GOOD • LIVE LIGHT</small></div><div class="pill">🌙 First Session</div></header>
+<section class="hero"><span class="tag">💗 Let's get to know you</span><h1>بدايتنا الصح بتبدأ من هنا</h1><p>جاوب/ي على الأسئلة دي علشان نتعرف على جسمك، صحتك، وعاداتك ونقدر نجهزلك نظام مناسب ليك. كل إجاباتك هتتبعت لواتساب MoonDiet بعد مراجعتك ليها.</p></section>
+<section class="panel" id="formPanel">
+<div class="head"><strong id="stepTitle">01 / بياناتك وقياساتك</strong><span class="counter" id="counter">1 / 7</span></div>
+<div class="progress"><i id="progress"></i></div><div class="hint" id="hint">ابدأ/ي ببياناتك الأساسية والقياسات الحالية.</div>
+<div id="questions"></div><p class="error" id="error">من فضلك جاوب/ي على الأسئلة المطلوبة علشان نكمل.</p>
+<div class="buttons"><button type="button" class="btn backbtn hidden" id="back">السابق</button><button type="button" class="btn mainbtn" id="next">التالي ←</button></div>
+</section>
+<section class="panel hidden" id="resultPanel">
+<div class="center"><div style="font-size:48px">💌✨</div><h2 class="finish">خلصنا أول خطوة!</h2><p class="finishnote">راجِع/ي إجاباتك، وبعدها ابعتها لواتساب MoonDiet.</p></div>
+<div class="qt">📋 ملخص الإجابات</div><pre class="receipt" id="receipt"></pre>
+<div class="buttons"><button type="button" class="btn mainbtn" id="send">إرسال الإجابات على واتساب 💚</button><button type="button" class="btn backbtn" id="copy">نسخ</button></div>
+<div class="buttons"><button type="button" class="btn backbtn" id="edit" style="flex:1">تعديل الإجابات</button><button type="button" class="btn backbtn" id="reset" style="flex:1">بدء من جديد</button></div>
+<p class="foot">الرسالة هتفتح في محادثة واتساب على الرقم 01225206376. اضغط/ي إرسال من واتساب لإتمام الإرسال. إجاباتك لا تُحفظ على الموقع.</p>
+</section>
+<p class="foot">MOONDIET 🌙 · توازنك خطوة بخطوة</p>
+</main>
+<script>
+(function(){
+const phone='201225206376';
+const steps=[
+{title:'01 / بياناتك وقياساتك',hint:'ابدأ/ي ببياناتك الأساسية والقياسات الحالية.',fields:[
+{id:'الاسم بالكامل',type:'text',required:true,placeholder:'اكتب/ي الاسم بالكامل'},
+{id:'رقم الموبايل',type:'tel',placeholder:'01xxxxxxxxx'},
+{id:'السن',type:'number',required:true,placeholder:'بالسنوات'},
+{id:'النوع',type:'radio',required:true,options:['أنثى','ذكر']},
+{id:'الطول (سم)',type:'number',required:true,placeholder:'مثال: 165'},
+{id:'الوزن الحالي (كجم)',type:'number',required:true,placeholder:'مثال: 82'},
+{id:'الوزن المستهدف (كجم)',type:'number',placeholder:'اختياري'},
+{id:'محيط الخصر (سم)',type:'number',placeholder:'اختياري'},
+{id:'طبيعة الشغل والحركة اليومية',type:'radio',options:['مكتبي / جلوس معظم اليوم','حركة خفيفة','حركة متوسطة','مجهود بدني كبير','طالب/ة','لا أعمل حاليًا']}
+]},
+{title:'02 / الحالة الصحية والتاريخ المرضي',hint:'اختار/ي كل ما ينطبق، واكتب/ي أي تفاصيل مهمة في آخر السؤال.',fields:[
+{id:'هل عندك أمراض أو تشخيصات طبية؟',type:'check',options:['لا يوجد','مقاومة إنسولين','سكر النوع الأول','سكر النوع الثاني','تكيس المبايض','خمول الغدة الدرقية','نشاط الغدة الدرقية','ضغط مرتفع','كوليسترول / دهون ثلاثية','أمراض القلب','أمراض الكلى','أمراض الكبد','أنيميا / نقص حديد','مشاكل المرارة','تشخيص آخر']},
+{id:'هل أجريت عمليات جراحية؟',type:'radio',options:['لا','تكميم','تحويل مسار','استئصال المرارة','عملية أخرى']},
+{id:'هل تتناول/ين أدوية بانتظام؟',type:'check',options:['لا أتناول أدوية','أدوية السكر','أدوية الغدة','أدوية الضغط','أدوية الكوليسترول','أدوية هرمونية','أدوية أخرى']},
+{id:'هل تتناول/ين مكملات أو فيتامينات؟',type:'check',options:['لا','فيتامين D','فيتامين B12','حديد','أوميجا 3','مالتي فيتامين','بروتين / مكمل رياضي','مكملات أخرى']},
+{id:'هل عندك حساسية أو عدم تحمل لأطعمة؟',type:'check',options:['لا','اللبن ومنتجاته','البيض','القمح / الجلوتين','المكسرات','الأسماك والمأكولات البحرية','أطعمة أخرى']},
+{id:'هل عندك مشاكل في الجهاز الهضمي؟',type:'check',options:['لا','إمساك','إسهال متكرر','انتفاخ وغازات','قولون عصبي','حموضة / ارتجاع','آلام بالمعدة']},
+{id:'هل تعاني من أعراض متكررة؟',type:'check',options:['لا يوجد','إرهاق مستمر','دوخة','صداع','تساقط شعر','اضطراب النوم','احتباس سوائل / تورم']},
+{id:'هل أجريت تحاليل خلال آخر 6 شهور؟',type:'check',options:['لا','CBC صورة دم','سكر صائم / تراكمي','وظائف الغدة','فيتامين D / B12','Ferritin مخزون الحديد','وظائف كبد وكلى','دهون الدم']},
+{id:'تفاصيل طبية مهمة (التشخيص، الأدوية والجرعات، العمليات أو نتائج التحاليل)',type:'textarea',placeholder:'اكتب/ي أي تفاصيل مهمة هنا...',optional:true}
+]},
+{title:'03 / أسئلة خاصة بالسيدات',hint:'لو السؤال مش مناسب ليك اختاري «لا ينطبق».',fields:[
+{id:'الحالة الحالية',type:'radio',options:['غير متزوجة','متزوجة','حامل','مرضع','لا ينطبق']},
+{id:'هل الدورة الشهرية منتظمة؟',type:'radio',options:['منتظمة','غير منتظمة','متقطعة','لا ينطبق']},
+{id:'هل عندك تكيس مبايض أو اضطرابات هرمونية؟',type:'radio',options:['لا','تكيس مبايض','اضطراب هرموني آخر','غير متأكدة','لا ينطبق']},
+{id:'هل تعانين من أعراض مرتبطة بالدورة؟',type:'check',options:['لا','انتفاخ واحتباس سوائل','زيادة الشهية أو اشتهاء السكريات','آلام شديدة','أعراض أخرى','لا ينطبق'],optional:true}
+]},
+{title:'04 / الأكل والعادات الغذائية',hint:'محتاجين نفهم روتين أكلك وتفضيلاتك من غير أحكام.',fields:[
+{id:'كام وجبة بتتناول/ي عادةً في اليوم؟',type:'radio',options:['وجبة واحدة','وجبتان','3 وجبات','أكثر من 3','غير منتظم']},
+{id:'هل بتتناول/ي وجبة الإفطار؟',type:'radio',options:['يوميًا','أحيانًا','نادرًا','لا أتناول الإفطار']},
+{id:'إيه الأكلات اللي بتحب/ي وجودها في النظام؟',type:'check',options:['بيض','جبن ومنتجات ألبان','فول وبقوليات','دجاج','لحوم','أسماك','أرز ومكرونة','بطاطس','خضروات','فاكهة']},
+{id:'أكلات لا تحبها أو لا تناسبك',type:'textarea',placeholder:'اكتب/ي الأكلات اللي مش بتحبها...',optional:true},
+{id:'بتتناول/ي حلويات أو سكريات قد إيه؟',type:'radio',options:['يوميًا','عدة مرات أسبوعيًا','مرة أسبوعيًا','نادرًا / لا أتناولها']},
+{id:'بتطلب/ي أكل جاهز أو وجبات سريعة قد إيه؟',type:'radio',options:['يوميًا','3–4 مرات أسبوعيًا','مرة أو مرتين أسبوعيًا','نادرًا']},
+{id:'هل بتحس/ي بجوع بين الوجبات؟',type:'radio',options:['دائمًا','أحيانًا','نادرًا','لا']},
+{id:'هل بتاكل/ي بسبب التوتر أو الزعل أو الملل؟',type:'radio',options:['بشكل متكرر','أحيانًا','نادرًا','لا']},
+{id:'هل بتحس/ي أحيانًا بفقدان السيطرة على كمية الأكل؟',type:'radio',options:['نعم','أحيانًا','لا','أفضل مناقشة الأمر بشكل خاص'],optional:true}
+]},
+{title:'05 / المياه والمشروبات',hint:'تقديرك التقريبي كفاية.',fields:[
+{id:'كمية المياه اليومية',type:'radio',options:['أقل من 3 أكواب','3–5 أكواب','6–8 أكواب','أكثر من 8 أكواب']},
+{id:'المشروبات اللي بتتناولها بانتظام',type:'check',options:['شاي','قهوة / نسكافيه','عصائر','مشروبات غازية','مشروبات دايت','أعشاب','مشروبات طاقة']},
+{id:'بتحلّي المشروبات بإيه؟',type:'radio',options:['سكر عادي','عسل','محلي دايت','بدون سكر']}
+]},
+{title:'06 / النشاط والنوم ونمط الحياة',hint:'الهدف نختار خطة تناسب يومك الحقيقي.',fields:[
+{id:'هل بتمارس/ي رياضة؟',type:'check',options:['لا أمارس','مشي','جيم / مقاومة','كارديو','سباحة','رياضة أخرى']},
+{id:'عدد مرات التمرين أسبوعيًا',type:'radio',options:['لا أتمرن','1–2 مرة','3–4 مرات','5 مرات أو أكثر']},
+{id:'متوسط عدد ساعات النوم',type:'radio',options:['أقل من 5 ساعات','5–6 ساعات','7–8 ساعات','أكثر من 8 ساعات']},
+{id:'جودة النوم',type:'radio',options:['جيد ومنتظم','نوم متقطع','صعوبة في النوم','أستيقظ مرهقًا']},
+{id:'مستوى التوتر والضغط النفسي',type:'radio',options:['منخفض','متوسط','مرتفع','مرتفع جدًا']}
+]},
+{title:'07 / تجارب الدايت والهدف',hint:'آخر خطوة! عرفينا إيه اللي يناسبك وإيه اللي محتاج يتغير.',fields:[
+{id:'هل جربت أنظمة غذائية قبل كده؟',type:'radio',options:['أول تجربة','نعم، أكثر من مرة']},
+{id:'إيه الأنظمة اللي جربتها؟',type:'check',options:['حساب السعرات','الصيام المتقطع','كيتو','لو كارب','أنظمة أخرى','لم أجرب'],optional:true},
+{id:'أكبر صعوبة واجهتك في الأنظمة السابقة',type:'check',options:['الجوع','الحرمان','قلة التنوع','صعوبة الالتزام','ثبات الوزن','استعادة الوزن','ضيق الوقت'],optional:true},
+{id:'إيه هدفك الأساسي؟',type:'radio',required:true,options:['خسارة الوزن','تقليل دهون البطن','تحسين الصحة العامة','تنظيم سكر الدم','بناء العضلات','تثبيت الوزن','تحسين العادات الغذائية']},
+{id:'تحب/ي يكون النظام عامل إزاي؟',type:'radio',options:['مرن وبدائل كثيرة','محدد وواضح','وصفات وأفكار جديدة','مزيج من كل ده']},
+{id:'أي تفاصيل أو ظروف تحب/ي نعرفها قبل ما نبدأ؟',type:'textarea',placeholder:'اكتب/ي أي حاجة شايف/ة إنها مهمة...',optional:true},
+{id:'الموافقة على إرسال الإجابات',type:'agree',required:true,label:'أوافق على إرسال إجاباتي، بما فيها المعلومات الصحية التي اخترت مشاركتها، إلى MOONDIET عبر واتساب.'}
+]}
+];
+let index=0,answers={};
+const el=id=>document.getElementById(id);
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function render(){
+ const step=steps[index];el('stepTitle').textContent=step.title;el('counter').textContent=(index+1)+' / '+steps.length;el('progress').style.width=((index+1)/steps.length*100)+'%';el('hint').textContent=step.hint;el('back').classList.toggle('hidden',index===0);el('next').textContent=index===steps.length-1?'مراجعة وإرسال ✨':'التالي ←';el('error').classList.remove('show');
+ el('questions').innerHTML=step.fields.map((f,i)=>{
+  const val=answers[f.id];let input='';
+  if(f.type==='text'||f.type==='number'||f.type==='tel')input='<input class="field" type="'+f.type+'" name="q" data-id="'+esc(f.id)+'" value="'+esc(val||'')+'" placeholder="'+esc(f.placeholder||'')+'" '+(f.required?'required':'')+'>';
+  else if(f.type==='textarea')input='<textarea class="field fieldarea" data-id="'+esc(f.id)+'" placeholder="'+esc(f.placeholder||'')+'">'+esc(val||'')+'</textarea>';
+  else if(f.type==='agree')input='<label class="opt"><input type="checkbox" data-id="'+esc(f.id)+'" '+(val?'checked':'')+'><span>'+esc(f.label)+'</span></label>';
+  else {const multi=f.type==='check',chosen=Array.isArray(val)?val:[];input='<div class="opts">'+f.options.map(o=>'<label class="opt"><input type="'+(multi?'checkbox':'radio')+'" name="q_'+i+'" data-id="'+esc(f.id)+'" value="'+esc(o)+'" '+(multi?chosen.includes(o):val===o?'checked':'')+'><span>'+esc(o)+'</span></label>').join('')+'</div>';}
+  return '<section class="q"><div class="qt">'+(i+1)+'. '+esc(f.id)+(f.optional?'<span class="sub">اختياري</span>':f.required?'<span class="sub">مطلوب</span>':'')+'</div>'+input+'</section>';
+ }).join('');
+}
+function save(){
+ steps[index].fields.forEach(f=>{
+  if(f.type==='text'||f.type==='number'||f.type==='tel'||f.type==='textarea'){const x=document.querySelector('[data-id="'+CSS.escape(f.id)+'"]');answers[f.id]=x?x.value.trim():'';}
+  else if(f.type==='agree'){const x=document.querySelector('[data-id="'+CSS.escape(f.id)+'"]');answers[f.id]=!!(x&&x.checked);}
+  else if(f.type==='check'){answers[f.id]=Array.from(document.querySelectorAll('[data-id="'+CSS.escape(f.id)+'"]:checked')).map(x=>x.value);}
+  else {const x=document.querySelector('[data-id="'+CSS.escape(f.id)+'"]:checked');answers[f.id]=x?x.value:'';}
+ });
+}
+function valid(){
+ for(const f of steps[index].fields){if(!f.required)continue;const v=answers[f.id];if(v===undefined||v===''||v===false||(Array.isArray(v)&&!v.length)){el('error').textContent='في سؤال مطلوب لسه محتاج إجابة: '+f.id;el('error').classList.add('show');return false;}}
+ return true;
+}
+function summary(){
+ const lines=['🌙 MOONDIET — استمارة التعارف والتقييم الأولي','━━━━━━━━━━━━━━━━━━'];
+ steps.forEach(s=>s.fields.forEach(f=>{const v=answers[f.id];if(v===undefined||v===''||v===false||(Array.isArray(v)&&!v.length))return;lines.push('• '+f.id+': '+(Array.isArray(v)?v.join('، '):v===true?'تمت الموافقة':v));}));
+ return lines.join('\n');
+}
+function finish(){el('formPanel').classList.add('hidden');el('resultPanel').classList.remove('hidden');el('receipt').textContent=summary();window.scrollTo({top:0,behavior:'smooth'});}
+el('next').addEventListener('click',()=>{save();if(!valid())return;if(index<steps.length-1){index++;render();window.scrollTo({top:0,behavior:'smooth'});}else finish();});
+el('back').addEventListener('click',()=>{save();if(index>0){index--;render();window.scrollTo({top:0,behavior:'smooth'});}});
+el('send').addEventListener('click',()=>{const url='https://wa.me/'+phone+'?text='+encodeURIComponent(summary());window.location.href=url;});
+el('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(summary());el('copy').textContent='تم النسخ ✓';}catch(e){el('copy').textContent='تعذر النسخ';}});
+el('edit').addEventListener('click',()=>{el('resultPanel').classList.add('hidden');el('formPanel').classList.remove('hidden');index=steps.length-1;render();window.scrollTo({top:0,behavior:'smooth'});});
+el('reset').addEventListener('click',()=>{answers={};index=0;el('resultPanel').classList.add('hidden');el('formPanel').classList.remove('hidden');render();window.scrollTo({top:0,behavior:'smooth'});});
+render();
+})();
+</script>
+</body>
+</html>
