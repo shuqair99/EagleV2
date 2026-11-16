@@ -1,0 +1,1 @@
+MoonDiet first-session form publishing configuration.
