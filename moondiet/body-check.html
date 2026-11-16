@@ -1,128 +1,347 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#ffd4e5">
-  <meta name="description" content="MoonDiet Body Check — فورم المتابعة الأسبوعية التفاعلي">
-  <title>MoonDiet | Body Check 💗</title>
-  <style>
-    :root{--ink:#293b52;--muted:#738093;--rose:#f44683;--rose-light:#ffe2ec;--cream:#fffaf5;--line:#ebe6e7;--lilac:#ebe4ff;--mint:#dff8ea;--yellow:#ffeaa6;--shadow:0 20px 55px rgba(76,39,66,.13)}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;min-height:100vh;background:radial-gradient(circle at 9% 10%,#fde4f1 0 16%,transparent 36%),radial-gradient(circle at 91% 20%,#fff0c7 0 9%,transparent 33%),radial-gradient(circle at 92% 95%,#dcf7e9,transparent 36%),#fff9f7;color:var(--ink);font-family:Tahoma,Arial,"Segoe UI",sans-serif;line-height:1.65}
-    .wrap{max-width:620px;margin:0 auto;padding:26px 14px 48px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:3px 6px 22px}.brand{font-weight:900;font-size:28px;letter-spacing:-1.4px;direction:ltr;line-height:1}.brand span{color:var(--rose)} .brand small{font-weight:700;display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:7px;text-transform:uppercase}.pill{background:white;padding:8px 14px;border:1px solid #f8d1df;border-radius:60px;color:#ce3872;font-size:12px;font-weight:bold;white-space:nowrap}
-    .hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#ffdce9 0%,#ffecca 55%,#e6d9fe 100%);border:2px solid #fff;box-shadow:var(--shadow);border-radius:30px;padding:25px 25px 26px;isolation:isolate}.hero:before,.hero:after{content:"";border:3px solid #f15d95;opacity:.34;border-radius:50%;position:absolute;width:150px;height:150px;left:-65px;top:-70px;z-index:-1}.hero:after{width:130px;height:130px;left:auto;right:-60px;top:auto;bottom:-85px;border-color:#9972ea}.hero .tag{display:inline-flex;background:white;border-radius:12px;padding:6px 12px;color:#bf4173;font-size:12px;font-weight:bold}.hero h1{margin:13px 0 8px;font-size:clamp(24px,6vw,36px);line-height:1.36;letter-spacing:-.7px}.hero h1 em{font-style:normal;color:#eb3478}.hero p{font-size:14px;color:#5d5266;margin:0;max-width:420px}.decor{position:absolute;font-size:38px;left:25px;top:28px;transform:rotate(-13deg)}.spark{position:absolute;left:54px;bottom:8px;font-size:36px;transform:rotate(18deg)}
-    .panel{background:rgba(255,255,255,.95);box-shadow:var(--shadow);border:1px solid #fff;border-radius:28px;margin-top:17px;padding:22px}.step-header{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}.step-header strong{font-size:16px}.counter{color:var(--muted);font-size:12px;font-weight:bold;direction:ltr}.progress{height:10px;background:#f3ecf0;border-radius:20px;overflow:hidden;margin-bottom:23px}.progress i{display:block;height:100%;width:33.333%;background:linear-gradient(90deg,#f55d95,#ff9d79);border-radius:20px;transition:width .25s ease}.section-note{background:#f5f0ff;border-radius:15px;padding:10px 14px;font-size:12px;color:#6e6482;margin-bottom:20px}
-    .question{margin:0 0 24px}.question:last-child{margin-bottom:6px}.q-head{font-size:15px;font-weight:900;line-height:1.55;margin-bottom:10px}.q-sub{color:#8390a0;font-weight:normal;font-size:12px;display:block;margin-top:2px}.number{color:var(--rose);display:inline-block;margin-left:4px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}.choices .wide{grid-column:1 / -1}.option{position:relative;display:flex;align-items:center;gap:9px;min-height:57px;padding:11px 12px;border-radius:15px;border:1.5px solid #eee6eb;background:#fff;cursor:pointer;font-size:13px;font-weight:650;color:#45566c;transition:background .15s,border .15s,transform .15s;user-select:none}.option:active{transform:scale(.985)}.option.selected{background:#fff0f6;border-color:#f35c95;color:#ac2f63;box-shadow:0 0 0 1px #f7c7da inset}.option .tick{flex:0 0 20px;width:20px;height:20px;border:1.5px solid #d7cbd3;border-radius:50%;display:grid;place-items:center;font-size:12px;color:transparent;background:white}.option.selected .tick{background:#f34b88;border-color:#f34b88;color:white}.option input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}.option:focus-within{outline:2px solid #f786af;outline-offset:2px}.txt{width:100%;font:inherit;border:1.7px solid #eddfe8;border-radius:15px;outline:none;background:#fffefa;min-height:54px;padding:13px 15px;color:var(--ink);font-size:16px}.txt:focus{border-color:var(--rose);box-shadow:0 0 0 3px #ffe0ed}.error{color:#ba225b;font-size:12px;margin:8px 3px 0;display:none}.error.visible{display:block}.buttons{display:flex;gap:10px;margin-top:23px}.btn{border:0;border-radius:16px;min-height:54px;padding:13px 18px;font:inherit;font-size:15px;font-weight:900;cursor:pointer}.btn-main{background:linear-gradient(90deg,#f3387e,#ff7b83);color:white;flex:1;box-shadow:0 9px 23px rgba(243,56,126,.26)}.btn-back{color:#6f7182;background:#f5eff4;min-width:95px}.btn-secondary{background:#fff;border:1.5px solid #e9d5df;color:#ae3768}.btn:focus-visible{outline:3px solid #b19cee;outline-offset:2px}.privacy{margin:18px auto 0;text-align:center;color:#85909d;font-size:11px;max-width:510px;line-height:1.8}.hidden{display:none!important}.success-emoji{font-size:55px;text-align:center}.finish-title{text-align:center;font-size:25px;margin:6px 0 5px}.finish-sub{text-align:center;color:var(--muted);font-size:13px;margin:0 0 20px}.mission{border:1.5px dashed #eda9c9;background:linear-gradient(135deg,#fff1f6,#f2edff);border-radius:21px;padding:17px;margin-bottom:15px}.mission .mini{font-weight:900;letter-spacing:.5px;font-size:11px;color:#be3b72;direction:ltr;text-align:right}.mission h3{margin:3px 0 5px;font-size:21px}.mission p{margin:0;color:#675f71;font-size:13px}.receipt{background:#fffefa;border:1px solid #eee8e6;border-radius:16px;padding:14px;max-height:270px;overflow:auto;white-space:pre-wrap;font:12px/1.9 Tahoma,Arial,sans-serif;color:#586375;direction:rtl}.footer-note{color:#8b8993;text-align:center;font-size:11px;line-height:1.8;margin-top:17px}.tiny{font-size:11px;color:var(--muted)}
-    @media (max-width:380px){.choices{grid-template-columns:1fr}.hero{padding:23px 18px}.panel{padding:18px}.decor{font-size:28px;left:11px}.btn{font-size:13px}.topbar .pill{font-size:11px}}
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f5ee">
+<meta name="description" content="MOONDIET - استمارة التعارف والتقييم الغذائي الأولي">
+<title>MOONDIET | First Session</title>
+<style>
+:root{
+  --ink:#26362f;--muted:#758078;--green:#496b56;--green-soft:#e8f0e8;
+  --coral:#ed806d;--coral-soft:#fff0eb;--yellow:#f3d77c;--lav:#eee9f7;
+  --cream:#f7f5ee;--white:#fff;--line:#e8e8df;--shadow:0 14px 40px rgba(45,62,48,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+ radial-gradient(circle at 5% 4%,rgba(243,215,124,.25),transparent 25%),
+ radial-gradient(circle at 96% 23%,rgba(237,128,109,.12),transparent 27%),
+ var(--cream);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.65}
+button,input,textarea{font:inherit}
+.wrap{width:min(100% - 24px,760px);margin:0 auto;padding:18px 0 42px}
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 5px 17px}
+.brand{font-size:27px;font-weight:1000;letter-spacing:-1px;direction:ltr;color:var(--green)}
+.brand span{color:var(--coral)}
+.brand small{display:block;font-size:9px;letter-spacing:2px;color:var(--muted);text-align:left;margin-top:-2px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:40px;padding:7px 12px;font-size:11px;font-weight:800;color:var(--green);white-space:nowrap}
+.hero{position:relative;overflow:hidden;border-radius:27px;padding:22px 22px 24px;background:linear-gradient(120deg,#e8f0e8 0%,#fff2df 55%,#f8e7e2 100%);border:1px solid #fff;box-shadow:var(--shadow);margin-bottom:14px}
+.hero:before{content:"";position:absolute;width:155px;height:155px;border:22px solid rgba(73,107,86,.08);border-radius:50%;left:-65px;top:-80px}
+.hero:after{content:"✳";position:absolute;left:24px;bottom:9px;font-size:35px;color:rgba(237,128,109,.6);transform:rotate(16deg)}
+.kicker{display:inline-block;background:#fff;border-radius:8px;padding:5px 10px;color:var(--green);font-size:11px;font-weight:900;letter-spacing:.4px}
+.hero h1{font-size:clamp(23px,5.5vw,34px);line-height:1.35;margin:11px 0 7px;max-width:560px}
+.hero h1 em{font-style:normal;color:#d66e5e}
+.hero p{font-size:13px;color:#59675e;margin:0;max-width:560px}
+.hero-foot{margin-top:13px;font-size:11px;font-weight:800;color:var(--green)}
+.panel{background:rgba(255,255,255,.97);border:1px solid #fff;border-radius:24px;padding:18px;box-shadow:var(--shadow)}
+.step-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.step-name{font-size:16px;font-weight:900}
+.counter{font-size:11px;color:var(--muted);direction:ltr;font-weight:800;white-space:nowrap}
+.progress{height:8px;border-radius:20px;background:#edf0e9;overflow:hidden;margin-bottom:14px}
+.progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--green),#93b18f);border-radius:20px;transition:width .25s}
+.step-note{padding:9px 12px;border-radius:12px;background:#f6f4ec;color:#68746b;font-size:11px;margin-bottom:15px}
+.questions{display:grid;gap:10px}
+.qcard{border:1px solid var(--line);border-right:4px solid var(--accent,var(--green));border-radius:17px;padding:14px;background:linear-gradient(135deg,#fff 0%,var(--accent-soft,#fff) 100%);box-shadow:0 3px 12px rgba(45,62,48,.035)}
+.qtitle{font-size:13px;font-weight:900;line-height:1.55;margin:0 0 9px}
+.qmeta{display:inline-block;color:#8b948c;font-size:10px;font-weight:500;margin-right:5px}
+.req{color:#d96d5d}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.choice{display:flex;align-items:flex-start;gap:8px;min-height:42px;padding:9px 10px;border:1px solid #e8e9e2;border-radius:11px;background:#fdfdfa;font-size:12px;line-height:1.45;cursor:pointer;transition:.15s}
+.choice:has(input:checked){background:var(--accent-soft,var(--green-soft));border-color:var(--accent,var(--green));color:var(--ink);box-shadow:0 0 0 1px var(--accent,var(--green)) inset}
+.choice input{margin:3px 0 0;accent-color:var(--green);flex:0 0 auto}
+.choice:focus-within{outline:2px solid #9bb99b;outline-offset:2px}
+.field{width:100%;min-height:44px;border:1px solid #dfe4dc;border-radius:11px;background:#fdfdfa;padding:10px 12px;color:var(--ink);font-size:13px;outline:none}
+.field:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(73,107,86,.1)}
+textarea.field{min-height:78px;resize:vertical}
+.field::placeholder{color:#a0a8a0}
+.inline-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.error{display:none;background:#fff0ed;color:#a94e42;border-radius:10px;padding:9px 11px;font-size:11px;margin-top:10px}
+.error.show{display:block}
+.actions{display:flex;gap:8px;margin-top:17px}
+.btn{border:0;border-radius:13px;min-height:47px;padding:11px 15px;font-size:13px;font-weight:900;cursor:pointer}
+.btn-main{background:linear-gradient(100deg,var(--accent,var(--green)),#496b56);color:white;flex:1;box-shadow:0 7px 15px rgba(73,107,86,.18)}
+.btn-main:active{transform:translateY(1px)}
+.btn-back{background:#f1f2ed;color:#667268;min-width:92px}
+.btn:focus-visible{outline:3px solid #c7a76a;outline-offset:2px}
+.hidden{display:none!important}
+.result{text-align:center}
+.result-mark{font-size:48px}
+.result h2{font-size:22px;margin:2px 0 4px}
+.result p{font-size:12px;color:var(--muted);margin:0 0 15px}
+.summary{direction:rtl;text-align:right;white-space:pre-wrap;max-height:300px;overflow:auto;background:#fafaf6;border:1px solid var(--line);border-radius:13px;padding:12px;font:12px/1.85 Tahoma,Arial,sans-serif}
+.notice{font-size:10px;color:#7f8981;line-height:1.8;text-align:center;margin:13px 5px 0}
+.footer{text-align:center;font-size:10px;color:#8a938b;margin:15px 4px 0}
+@media(max-width:440px){
+ .wrap{width:min(100% - 18px,760px);padding-top:12px}
+ .hero{padding:18px 16px 21px;border-radius:22px}
+ .hero h1{font-size:23px}
+ .panel{padding:13px;border-radius:20px}
+ .qcard{padding:12px}
+ .choices{grid-template-columns:1fr}
+ .inline-grid{grid-template-columns:1fr 1fr}
+ .brand{font-size:24px}
+}
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <header class="topbar"><div class="brand">MOON<span>DIET</span><small>feel good • live light</small></div><div class="pill">💌 Friday Check-in</div></header>
-    <section class="hero" aria-label="عنوان الفورم">
-      <div class="decor" aria-hidden="true">💗</div><div class="spark" aria-hidden="true">✳</div>
-      <div class="tag">✨ Body Check</div>
-      <h1>الميزان قال رقمه...<br><em>بس جسمك بيقول إيه؟</em></h1>
-      <p>جاوبينا على كام اختيار بسيط، علشان نجهز أسبوع جديد يناسب جسمك ويكون أسهل في الالتزام 💕</p><p style="font-size:12px;font-weight:700;margin-top:12px">📲 الإجابات هتتبعت مباشرة لواتساب المتابعة: <span dir="ltr">01225206376</span></p>
-    </section>
-    <section class="panel" id="formPanel">
-      <div class="step-header"><strong id="stepTitle">01 / نطمن على تقدمك 💞</strong><span class="counter" id="counter">1 / 3</span></div>
-      <div class="progress" aria-label="مستوى التقدم"><i id="progress"></i></div>
-      <div class="section-note" id="stepNote">خدي راحتك، مفيش إجابات صح وغلط ✨</div>
-      <form id="survey" novalidate>
-        <div id="stepContent"></div>
-        <p class="error" id="formError" role="alert">اختاري إجابة للأسئلة المطلوبة علشان نكمّل 💗</p>
-        <nav class="buttons"><button type="button" id="backBtn" class="btn btn-back hidden">السابق</button><button type="button" id="nextBtn" class="btn btn-main">التالي ←</button></nav>
-      </form>
-    </section>
-    <section class="panel hidden" id="resultPanel" aria-live="polite">
-      <div class="success-emoji">💌✨</div><h2 class="finish-title">كده خلصنا يا قمر!</h2>
-      <p class="finish-sub">إجاباتك جاهزة تتبعت لواتساب MoonDiet 💗</p>
-      <div class="mission"><div class="mini">YOUR MOONDIET MISSION</div><h3 id="missionTitle"></h3><p id="missionDesc"></p></div>
-      <div class="q-head">📋 معاينة الإجابات</div><pre class="receipt" id="receipt"></pre>
-      <div class="buttons" style="flex-wrap:wrap"><button class="btn btn-main" id="waBtn" type="button">💚 إرسال الإجابات لـ MoonDiet</button><button class="btn btn-secondary" id="copyBtn" type="button">نسخ الإجابات</button></div>
-      <div class="buttons"><button class="btn btn-back" id="editBtn" type="button" style="flex:1">تعديل الإجابات</button><button class="btn btn-back" id="resetBtn" type="button" style="flex:1">بدء فورم جديد</button></div>
-      <p class="footer-note">بعد الضغط هتفتح محادثة MoonDiet على الرقم 01225206376 والرسالة جاهزة. اضغطي إرسال علشان توصل الإجابات.</p>
-    </section>
-    <p class="privacy">🔒 الإجابات مش بتتجمع على سيرفر من خلال الملف ده؛ بتفضل في الصفحة لحد ما تبعتيها بنفسك على واتساب MoonDiet. المعلومات الصحية اختيارية.</p>
-  </main>
-  <noscript><div style="background:#fff;padding:20px;margin:18px;border-radius:18px;text-align:center;color:#ba225b">من فضلك افتحي الملف في Chrome أو Safari مع تفعيل JavaScript علشان تظهر الأسئلة.</div></noscript>
-  <script>
-  (() => {
-    'use strict';
-    const steps=[
-      {title:'01 / نطمن على تقدمك 💞',note:'خدي راحتك، مفيش إجابات صح وغلط ✨',fields:[
-        {id:'name',title:'اسمك إيه يا قمر؟',kind:'text',placeholder:'اكتبي اسمك علشان نعرف إجاباتك'},
-        {id:'scale',title:'نتيجة ميزان الأسبوع ده كانت إيه؟',options:['وزني نزل 🎉','وزني ثابت ⚖️','وزني زاد شوية','مش متأكدة من المقارنة']},
-        {id:'body',title:'إيه أكتر تغيير لاحظتيه في جسمك؟',options:['هدومي وسعت','بطني أخف والانتفاخ أقل','طاقتي اتحسنت','مش حاسة بفرق واضح','حاسّة بانتفاخ أو احتباس سوائل'], optional:true}
-      ]},
-      {title:'02 / نفهم أسبوعك 🍓',note:'الإجابات دي هتساعدنا نظبط الشبع والمرونة في نظامك.',fields:[
-        {id:'hunger',title:'الجوع كان بيظهر عندك إمتى؟',options:['بعد الفطار','قبل الغدا','بعد الغدا','بالليل','كنت شبعانة معظم اليوم']},
-        {id:'challenge',title:'أكتر حاجة صعّبت عليكي الالتزام؟',options:['الوقت وتحضير الوجبات','الجوع','الزهق من الأصناف','الخروجات والعزومات','الضغط النفسي','الأسبوع كان سهل الحمد لله']},
-        {id:'adherence',title:'تقيّمي التزامك الأسبوع ده إزاي؟',options:['ممتازة 🌟','كويسة مع شوية لخبطات','تقريبًا نص الأسبوع','الأسبوع كان صعب']},
-        {id:'cravings',title:'كنتِ بتشتهي إيه أكتر؟',options:['حلويات','عيش أو نشويات','مقرمشات وتسالي','أكل متأخر بالليل','مفيش اشتهاء ملحوظ'],optional:true}
-      ]},
-      {title:'03 / نجهز أسبوعك الجديد ✨',note:'اختياراتك هتساعدنا نعمل تغيير مفيد ليكي، مش حرمان.',fields:[
-        {id:'sleep',title:'نومك الأسبوع ده كان عامل إيه؟',options:['منتظم ومريح','متقطع','ساعات قليلة']},
-        {id:'movement',title:'حركتك كانت عاملة إيه؟',options:['بحرك جسمي بشكل منتظم','حركة بسيطة','تقريبًا مفيش حركة']},
-        {id:'factors',title:'في حاجة ممكن تكون أثرت على الميزان؟',kind:'multi',optional:true,options:['الدورة الشهرية قريبة أو موجودة','إمساك','أكل مالح أو وجبات بره','تغيير أدوية أو ظرف صحي','مفيش','أفضل عدم الإجابة']},
-        {id:'meal',title:'أنهي وجبة حابة ننوعها أكتر؟',options:['الفطار','الغدا','العشا','السناكس','مبسوطة من الوجبات الحالية']},
-        {id:'wish',title:'لو هتختاري ميزة واحدة للنظام الجديد؟',options:['وجبات تشبع أكتر','وصفات جديدة ولذيذة','أكل بيت سهل وسريع','مرونة أكبر','جدول واضح وبسيط']},
-        {id:'mission',title:'اختاري عادة واحدة تركزي عليها الأسبوع الجاي 🎯',options:['أظبط مواعيد أكلي','أتحرك يوميًا حسب قدرتي','أنام بشكل أفضل','أجهز وجباتي بدري','أقلل الأكل العشوائي بين الوجبات']}
-      ]}
-    ];
-    const custom={down:{title:'إيه أكتر حاجة ساعدتك الأسبوع ده؟',options:['تنظيم الوجبات','الشبع من الأكل','التحضير بدري','الحركة','الدعم والمتابعة']},same:{title:'مع ثبات الميزان، إيه اللي اتحسن عندك؟',options:['التزامي أحسن','هدومي أو قياساتي','طاقتي أو نومي','لسه مش ملاحظة تغيير','الأسبوع كان فيه ظروف']},up:{title:'إيه أكتر حاجة محتاجة نراعيها الأسبوع الجاي؟',options:['الجوع','الخروجات واللخبطة','النوم أو الضغط','الانتفاخ أو الإمساك','عايزة مراجعة بسيطة للنظام']},unknown:{title:'إيه أهم حاجة بالنسبة لك الأسبوع الجاي؟',options:['ألتزم بشكل أسهل','أشبع أكتر','أتحرك أكتر','أنوع أكلي','أتابع تقدمي بشكل أوضح']}};
-    const branchMap={'وزني نزل 🎉':'down','وزني ثابت ⚖️':'same','وزني زاد شوية':'up','مش متأكدة من المقارنة':'unknown'};
-    const values={}; let currentStep=0;
-    const $=(id)=>document.getElementById(id);
-    const esc=(s)=>String(s??'').replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    function fieldsAt(index){const fields=steps[index].fields.slice();if(index===2){const kind=branchMap[values.scale]||'unknown';fields.push({id:'branch',title:custom[kind].title,options:custom[kind].options,optional:true})}return fields}
-    function renderField(f,i){const val=values[f.id];const q=`<div class="q-head"><span class="number">${i+1}.</span> ${esc(f.title)} ${f.optional?'<span class="q-sub">اختياري — تقدري تتخطيه</span>':''}</div>`;
-      if(f.kind==='text')return `<section class="question" data-field="${f.id}">${q}<input class="txt" name="${f.id}" id="nameField" type="text" maxlength="60" autocomplete="name" placeholder="${esc(f.placeholder)}" value="${esc(val||'')}"></section>`;
-      const vals=Array.isArray(val)?val:[];
-      return `<section class="question" data-field="${f.id}">${q}<div class="choices" role="group" aria-label="${esc(f.title)}">${f.options.map((o,j)=>{const selected=(f.kind==='multi'?vals.includes(o):val===o);return `<label class="option ${selected?'selected':''} ${(f.options.length%2!==0&&j===f.options.length-1)?'wide':''}"><input type="${f.kind==='multi'?'checkbox':'radio'}" name="${f.id}" value="${esc(o)}" ${selected?'checked':''}><span class="tick">✓</span><span>${esc(o)}</span></label>`}).join('')}</div></section>`;
-    }
-    function redraw(){const step=steps[currentStep];$('stepTitle').textContent=step.title;$('counter').textContent=(currentStep+1)+' / '+steps.length;$('progress').style.width=((currentStep+1)/steps.length*100)+'%';$('stepNote').textContent=step.note;$('stepContent').innerHTML=fieldsAt(currentStep).map(renderField).join('');$('backBtn').classList.toggle('hidden',currentStep===0);$('nextBtn').textContent=currentStep===steps.length-1?'✨ جهزي إجاباتي':'كمّلي ←';$('formError').classList.remove('visible');}
-    function save(){const stepFields=fieldsAt(currentStep);for(const f of stepFields){if(f.kind==='text'){values[f.id]=($('nameField')?.value||'').trim();continue}const checked=Array.from(document.querySelectorAll(`input[name="${f.id}"]:checked`)).map(n=>n.value);values[f.id]=f.kind==='multi'?checked:(checked[0]||'')} }
-    function valid(){for(const f of fieldsAt(currentStep)){if(f.optional)continue;const v=values[f.id];if(!v||(Array.isArray(v)&&v.length===0)){const field=document.querySelector(`[data-field="${f.id}"]`);field?.scrollIntoView({behavior:'smooth',block:'center'});$('formError').textContent=f.kind==='text'?'اكتبي اسمك علشان نعرف إنتِ مين 💗':'في سؤال محتاج اختيار قبل ما نكمل 💗';$('formError').classList.add('visible');return false}}return true}
-    function mission(){if(values.hunger!=='كنت شبعانة معظم اليوم' && values.hunger){return ['Full & Happy 🍓','هنركز على الشبع وتوزيع الوجبات بشكل أريح ليكي.']}if(values.adherence==='الأسبوع كان صعب'||values.adherence==='تقريبًا نص الأسبوع'||values.challenge==='الوقت وتحضير الوجبات'){return ['Back on Track 🌷','هنخلي اختيارات الأكل أبسط وأكثر مرونة علشان ترجعي للروتين بسهولة.']}if(values.scale==='وزني ثابت ⚖️'||values.scale==='وزني زاد شوية'){return ['Progress Check 🔎','هنراجع الروتين والقياسات والعوامل المؤثرة قبل ما نغيّر الكميات.']}return ['Keep Glowing ✨','هنحافظ على اللي ناسبك ونضيف تنويع بسيط للأسبوع الجديد.']}
-    function receiptText(){const date=new Intl.DateTimeFormat('ar-EG',{dateStyle:'medium'}).format(new Date());const ans=(id)=>Array.isArray(values[id])?values[id].join('، '):(values[id]||'—');let text=`💗 MoonDiet | Friday Body Check\n📅 ${date}\n👩 الاسم: ${ans('name')}\n\n`;
-      for(const st of steps){for(const f of st.fields){if(f.id==='name')continue;text+=`• ${f.title}\n  ${ans(f.id)}\n`}}
-      const b=custom[branchMap[values.scale]||'unknown'];text+=`• ${b.title}\n  ${ans('branch')}\n`;
-      text+=`\n🎯 ${values.mission||'—'}\n💌 ${mission()[0]}\n\nMoonDiet 💕`;return text;}
-    function result(){const [title,desc]=mission();$('missionTitle').textContent=title;$('missionDesc').textContent=desc;$('receipt').textContent=receiptText();$('formPanel').classList.add('hidden');$('resultPanel').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
-    $('stepContent').addEventListener('change', (e) => {
-      const inp = e.target;
-      if (!inp.matches('input[type=checkbox],input[type=radio]')) return;
-      const label = inp.closest('.option');
-      if (inp.type === 'radio') {
-        document.querySelectorAll(`input[name="${inp.name}"]`).forEach(n => {
-          n.closest('.option')?.classList.remove('selected');
-        });
-      }
-      label?.classList.toggle('selected', inp.checked);
-      if (inp.name === 'factors' && inp.checked) {
-        const exclusive = ['مفيش','أفضل عدم الإجابة'];
-        document.querySelectorAll('input[name="factors"]').forEach(n => {
-          if (n === inp) return;
-          if (exclusive.includes(inp.value) || exclusive.includes(n.value)) {
-            n.checked = false;
-            n.closest('.option')?.classList.remove('selected');
-          }
-        });
-      }
-      if (inp.name === 'scale') values.scale = inp.value;
-      $('formError').classList.remove('visible');
-    });
-    $('nextBtn').addEventListener('click',()=>{save();if(!valid())return;if(currentStep<steps.length-1){currentStep++;redraw();$('formPanel').scrollIntoView({behavior:'smooth',block:'start'})}else{result()}});
-    $('backBtn').addEventListener('click',()=>{save();if(currentStep>0){currentStep--;redraw();$('formPanel').scrollIntoView({behavior:'smooth',block:'start'})}});
-    $('editBtn').addEventListener('click',()=>{$('resultPanel').classList.add('hidden');$('formPanel').classList.remove('hidden');redraw();$('formPanel').scrollIntoView({behavior:'smooth'})});
-    $('resetBtn').addEventListener('click',()=>{if(!confirm('تبدئي الفورم من الأول؟ الإجابات الحالية هتتمسح من الصفحة.'))return;Object.keys(values).forEach(k=>delete values[k]);currentStep=0;$('resultPanel').classList.add('hidden');$('formPanel').classList.remove('hidden');redraw();window.scrollTo({top:0,behavior:'smooth'})});
-    $('waBtn').addEventListener('click',()=>{const url='https://wa.me/201225206376?text='+encodeURIComponent(receiptText());window.location.href=url;});
-    $('copyBtn').addEventListener('click',async()=>{let ok=false;try{await navigator.clipboard.writeText(receiptText());ok=true}catch(e){const t=document.createElement('textarea');t.value=receiptText();document.body.appendChild(t);t.select();try{ok=document.execCommand('copy')}catch(_){}t.remove()}$('copyBtn').textContent=ok?'✅ تم نسخ الإجابات':'حددي النص من المعاينة وانسخيه';if(ok)setTimeout(()=>$('copyBtn').textContent='نسخ الإجابات',2200)});
-    redraw();
-  })();
-  </script>
+<main class="wrap">
+  <header class="brandbar">
+    <div class="brand">MOON<span>DIET</span><small>YOUR HEALTHY START</small></div>
+    <div class="pill">🌙 أول سيشن</div>
+  </header>
+
+  <section class="hero">
+    <span class="kicker">FIRST SESSION · GET TO KNOW YOU</span>
+    <h1>خلّينا نفهم جسمك،<br><em>ونبدأ صح من أول خطوة.</em></h1>
+    <p>جاوب/ي على الأسئلة دي براحتك. إجاباتك هتساعدنا نختار نظام يناسب صحتك، يومك، والأكل اللي بتحبه.</p>
+    <div class="hero-foot">📲 بعد المراجعة، إجاباتك هتتبعت لواتساب MOONDIET.</div>
+  </section>
+
+  <section class="panel" id="formPanel">
+    <div class="step-top"><div class="step-name" id="stepTitle"></div><div class="counter" id="counter"></div></div>
+    <div class="progress"><i id="progressBar"></i></div>
+    <div class="step-note" id="stepNote"></div>
+    <div class="questions" id="questions"></div>
+    <div class="error" id="errorBox" role="alert"></div>
+    <div class="actions">
+      <button class="btn btn-back hidden" id="backBtn" type="button">السابق</button>
+      <button class="btn btn-main" id="nextBtn" type="button">التالي ←</button>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="resultPanel">
+    <div class="result">
+      <div class="result-mark">🌿💌</div>
+      <h2>تمام، كده خلصنا!</h2>
+      <p>راجِع/ي الإجابات، وبعدها ابعتها لفريق MOONDIET على واتساب.</p>
+    </div>
+    <div class="qtitle">ملخص إجاباتك</div>
+    <pre class="summary" id="summary"></pre>
+    <div class="actions">
+      <button class="btn btn-main" id="sendBtn" type="button">إرسال على واتساب 💚</button>
+      <button class="btn btn-back" id="copyBtn" type="button">نسخ الإجابات</button>
+    </div>
+    <div class="actions">
+      <button class="btn btn-back" id="editBtn" type="button" style="flex:1">تعديل الإجابات</button>
+      <button class="btn btn-back" id="resetBtn" type="button" style="flex:1">بدء من جديد</button>
+    </div>
+    <p class="notice">المعلومات لا تُحفظ على الموقع. لن تُرسل الإجابات إلا بعد موافقتك والضغط على إرسال داخل واتساب.</p>
+  </section>
+  <p class="footer">MOONDIET · توازنك خطوة بخطوة 🌙</p>
+</main>
+
+<script>
+(function(){
+"use strict";
+var WHATSAPP_NUMBER="201225206376";
+var steps=[
+ {id:"personal",title:"بياناتك وقياساتك",note:"خلّينا نبدأ بالمعلومات الأساسية والقياسات الحالية.",fields:[
+  {id:"name",label:"الاسم بالكامل",type:"text",required:true,placeholder:"اكتب/ي الاسم بالكامل"},
+  {id:"age",label:"السن",type:"number",required:true,min:12,max:100,placeholder:"بالسنوات"},
+  {id:"gender",label:"النوع",type:"single",required:true,options:["أنثى","ذكر"]},
+  {id:"height",label:"الطول (سم)",type:"number",required:true,min:100,max:230,placeholder:"مثال: 165"},
+  {id:"weight",label:"الوزن الحالي (كجم)",type:"number",required:true,min:25,max:300,step:"0.1",placeholder:"مثال: 82"},
+  {id:"targetWeight",label:"الوزن المستهدف (كجم)",type:"number",min:25,max:250,step:"0.1",placeholder:"اختياري"},
+  {id:"phone",label:"رقم موبايل للتواصل",type:"tel",placeholder:"01xxxxxxxxx"},
+  {id:"work",label:"طبيعة الشغل والحركة اليومية",type:"single",options:["مكتبي / جلوس معظم اليوم","حركة خفيفة","حركة متوسطة","مجهود بدني كبير","طالب/ة","لا أعمل حاليًا"]}
+ ]},
+ {id:"health",title:"الحالة الصحية",note:"اختار/ي كل ما ينطبق. لو مفيش اختاري «لا يوجد» فقط.",fields:[
+  {id:"conditions",label:"هل عندك أمراض أو تشخيصات طبية؟",type:"multi",exclusive:["لا يوجد"],options:["لا يوجد","مقاومة إنسولين","سكر النوع الأول","سكر النوع الثاني","تكيس المبايض","خمول الغدة الدرقية","نشاط الغدة الدرقية","ارتفاع ضغط الدم","ارتفاع الكوليسترول أو الدهون الثلاثية","أمراض القلب","أمراض الكلى","أمراض الكبد","أنيميا / نقص حديد","مشاكل المرارة","أمراض أو تشخيصات أخرى"]},
+  {id:"surgeries",label:"هل أجريت عمليات جراحية من قبل؟",type:"single",options:["لا","تكميم المعدة","تحويل مسار","استئصال المرارة","عملية أخرى"]},
+  {id:"medications",label:"هل بتتناول/ي أدوية بانتظام؟",type:"multi",exclusive:["لا أتناول أدوية"],options:["لا أتناول أدوية","أدوية السكر","أدوية الغدة","أدوية الضغط","أدوية الكوليسترول","أدوية هرمونية","أدوية أخرى"]},
+  {id:"supplements",label:"هل بتتناول/ي مكملات أو فيتامينات؟",type:"multi",exclusive:["لا"],options:["لا","فيتامين D","فيتامين B12","الحديد","أوميجا 3","مالتي فيتامين","بروتين / مكمل رياضي","مكملات أخرى"]},
+  {id:"allergies",label:"هل عندك حساسية أو عدم تحمّل لأطعمة معينة؟",type:"multi",exclusive:["لا"],options:["لا","اللبن ومنتجاته","البيض","القمح / الجلوتين","المكسرات","الأسماك والمأكولات البحرية","أطعمة أخرى"]},
+  {id:"digestive",label:"هل بتعاني من مشاكل في الجهاز الهضمي؟",type:"multi",exclusive:["لا"],options:["لا","إمساك","إسهال متكرر","انتفاخ وغازات","قولون عصبي","حموضة / ارتجاع","آلام بالمعدة"]},
+  {id:"symptoms",label:"هل عندك أعراض متكررة؟",type:"multi",exclusive:["لا يوجد"],options:["لا يوجد","إرهاق مستمر","دوخة","صداع","تساقط شعر","اضطراب النوم","احتباس سوائل / تورم","أعراض أخرى"]},
+  {id:"labs",label:"هل أجريت تحاليل خلال آخر 6 شهور؟",type:"multi",exclusive:["لا"],options:["لا","صورة دم CBC","سكر صائم أو تراكمي","وظائف الغدة الدرقية","فيتامين D أو B12","مخزون الحديد Ferritin","وظائف كبد وكلى","دهون الدم","تحاليل أخرى"]},
+  {id:"medicalDetails",label:"تفاصيل مهمة عن التشخيص أو الأدوية أو العمليات أو التحاليل",type:"textarea",placeholder:"اكتب/ي اسم الدواء والجرعة أو أي تفاصيل مهمة...",optional:true}
+ ]},
+ {id:"women",title:"أسئلة خاصة بالسيدات",note:"القسم ده بيظهر للسيدات فقط. لو سؤال مش مناسب اختاري «لا ينطبق».",onlyGender:"أنثى",fields:[
+  {id:"pregnancy",label:"هل أنتِ حاليًا؟",type:"single",options:["غير حامل","حامل","مرضع","أفضل مناقشة الأمر بشكل خاص"]},
+  {id:"cycle",label:"هل الدورة الشهرية منتظمة؟",type:"single",options:["منتظمة","غير منتظمة","متقطعة","لا ينطبق"]},
+  {id:"hormones",label:"هل عندك تكيس مبايض أو اضطرابات هرمونية؟",type:"single",options:["لا","تكيس مبايض","اضطراب هرموني آخر","غير متأكدة"]},
+  {id:"periodSymptoms",label:"هل بتعاني من أعراض مرتبطة بالدورة؟",type:"multi",exclusive:["لا"],options:["لا","انتفاخ واحتباس سوائل","زيادة الشهية أو اشتهاء السكريات","آلام شديدة","أعراض أخرى"],optional:true}
+ ]},
+ {id:"food",title:"عاداتك الغذائية",note:"مفيش إجابة صح أو غلط. المهم نعرف روتينك الحقيقي.",fields:[
+  {id:"meals",label:"عادةً بتتناول/ي كام وجبة في اليوم؟",type:"single",options:["وجبة واحدة","وجبتان","3 وجبات","أكثر من 3 وجبات","غير منتظم"]},
+  {id:"breakfast",label:"هل بتتناول/ي وجبة الإفطار؟",type:"single",options:["يوميًا","أحيانًا","نادرًا","لا أتناول الإفطار"]},
+  {id:"favoriteFoods",label:"إيه الأكلات اللي بتحب/ي وجودها في النظام؟",type:"multi",options:["البيض","الجبن ومنتجات الألبان","الفول والبقوليات","الدجاج","اللحوم","الأسماك","الأرز والمكرونة","البطاطس","الخضروات","الفاكهة"]},
+  {id:"dislikedFoods",label:"إيه الأكلات اللي مش بتحبها أو مش بتناسبك؟",type:"textarea",placeholder:"اكتب/ي الأكلات أو المكونات...",optional:true},
+  {id:"sweets",label:"بتتناول/ي حلويات أو سكريات قد إيه؟",type:"single",options:["يوميًا","عدة مرات أسبوعيًا","مرة أسبوعيًا","نادرًا","لا أتناولها"]},
+  {id:"takeaway",label:"بتطلب/ي أكل جاهز أو وجبات سريعة قد إيه؟",type:"single",options:["يوميًا","3–4 مرات أسبوعيًا","مرة أو مرتين أسبوعيًا","نادرًا"]},
+  {id:"hunger",label:"إحساسك بالجوع بين الوجبات عامل إزاي؟",type:"single",options:["دائمًا","أحيانًا","نادرًا","لا أشعر بجوع بين الوجبات"]},
+  {id:"cravings",label:"إمتى بتزيد شهيتك أو اشتهاءك للأكل؟",type:"single",options:["الصبح","بعد الظهر","بالليل","قبل النوم","وقت التوتر أو الزعل","مش مرتبط بوقت معين"],optional:true},
+  {id:"emotionalEating",label:"هل بتاكل/ي بسبب التوتر أو الزعل أو الملل؟",type:"single",options:["بشكل متكرر","أحيانًا","نادرًا","لا"]},
+  {id:"lossControl",label:"هل بتحس/ي أحيانًا بفقدان السيطرة على كمية الأكل؟",type:"single",options:["نعم","أحيانًا","لا","أفضل مناقشة الأمر بشكل خاص"],optional:true}
+ ]},
+ {id:"drinks",title:"المياه والمشروبات",note:"اختار/ي أقرب إجابة لمتوسط يومك.",fields:[
+  {id:"water",label:"بتشرب/ي مياه قد إيه يوميًا؟",type:"single",options:["أقل من 3 أكواب","3–5 أكواب","6–8 أكواب","أكثر من 8 أكواب"]},
+  {id:"drinks",label:"إيه المشروبات اللي بتتناولها بانتظام؟",type:"multi",options:["الشاي","القهوة / النسكافيه","العصائر","المشروبات الغازية","المشروبات الدايت","الأعشاب","مشروبات الطاقة"]},
+  {id:"sweetener",label:"بتحلّي المشروبات بإيه؟",type:"single",options:["سكر عادي","عسل","محلي دايت","بدون سكر"]}
+ ]},
+ {id:"lifestyle",title:"النشاط والنوم",note:"هنراعي طبيعة يومك وقدرتك على الحركة والراحة.",fields:[
+  {id:"activity",label:"مستوى نشاطك اليومي عمومًا",type:"single",options:["قليل جدًا / جلوس معظم اليوم","خفيف","متوسط","مرتفع"]},
+  {id:"exercise",label:"هل بتمارس/ي رياضة؟",type:"multi",exclusive:["لا أمارس"],options:["لا أمارس","مشي","جيم / مقاومة","كارديو","سباحة","رياضة أخرى"]},
+  {id:"exerciseFrequency",label:"بتتمرن/ي كام مرة أسبوعيًا؟",type:"single",options:["لا أتمرن","مرة أو مرتين","3–4 مرات","5 مرات أو أكثر"]},
+  {id:"sleepHours",label:"متوسط عدد ساعات النوم",type:"single",options:["أقل من 5 ساعات","5–6 ساعات","7–8 ساعات","أكثر من 8 ساعات"]},
+  {id:"sleepQuality",label:"جودة النوم",type:"single",options:["جيد ومنتظم","نوم متقطع","صعوبة في النوم","أستيقظ مرهق/ة"]},
+  {id:"stress",label:"مستوى التوتر والضغط النفسي",type:"single",options:["منخفض","متوسط","مرتفع","مرتفع جدًا"]}
+ ]},
+ {id:"goals",title:"هدفك وتفضيلاتك",note:"آخر خطوة. خلّينا نعرف إيه اللي هيساعدك تكمّل/ي.",fields:[
+  {id:"previousDiets",label:"هل جربت أنظمة غذائية قبل كده؟",type:"single",options:["دي أول تجربة","نعم، أكثر من مرة"]},
+  {id:"dietTypes",label:"إيه الأنظمة اللي جربتها؟",type:"multi",exclusive:["لم أجرب"],options:["حساب السعرات","الصيام المتقطع","كيتو","لو كارب","أنظمة أخرى","لم أجرب"],optional:true},
+  {id:"pastDifficulties",label:"إيه أكبر صعوبة واجهتك في الأنظمة السابقة؟",type:"multi",options:["الجوع","الحرمان","قلة التنوع","صعوبة الالتزام","ثبات الوزن","استعادة الوزن","ضيق الوقت"],optional:true},
+  {id:"goal",label:"إيه هدفك الأساسي من المتابعة؟",type:"single",required:true,options:["خسارة الوزن","تقليل دهون البطن","تحسين الصحة العامة","تنظيم سكر الدم","بناء العضلات","تثبيت الوزن","تحسين العادات الغذائية"]},
+  {id:"planStyle",label:"تحب/ي النظام يكون عامل إزاي؟",type:"single",options:["مرن وبدائل كثيرة","محدد وواضح","وصفات وأفكار جديدة","مزيج من كل ده"]},
+  {id:"notes",label:"أي ظروف أو ملاحظات تحب/ي نعرفها قبل ما نبدأ؟",type:"textarea",placeholder:"اكتب/ي أي معلومة إضافية...",optional:true},
+  {id:"consent",label:"موافقة الإرسال",type:"consent",required:true,consentText:"أوافق على إرسال إجاباتي، بما فيها المعلومات الصحية التي اخترت مشاركتها، إلى MOONDIET عبر واتساب."}
+ ]}
+];
+var answers={};
+var stepIndex=0;
+var $=function(id){return document.getElementById(id);};
+function esc(value){return String(value==null?"":value).replace(/[&<>"']/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch];});}
+function activeSteps(){return steps.filter(function(step){return !step.onlyGender||answers.gender===step.onlyGender;});}
+function renderField(field,index){
+ var value=answers[field.id];
+ var meta=field.required?'<span class="qmeta req">مطلوب *</span>':(field.optional?'<span class="qmeta">اختياري</span>':'');
+ var head='<div class="qtitle">'+(index+1)+'. '+esc(field.label)+' '+meta+'</div>';
+ var input="";
+ if(field.type==="text"||field.type==="number"||field.type==="tel"){
+  input='<input class="field" data-field="'+field.id+'" type="'+field.type+'" value="'+esc(value||"")+'" placeholder="'+esc(field.placeholder||"")+'" '+(field.min?'min="'+field.min+'" ':'')+(field.max?'max="'+field.max+'" ':'')+(field.step?'step="'+field.step+'" ':'')+' autocomplete="'+(field.type==="text"?"name":"off")+'">';
+ }else if(field.type==="textarea"){
+  input='<textarea class="field" data-field="'+field.id+'" placeholder="'+esc(field.placeholder||"")+'">'+esc(value||"")+'</textarea>';
+ }else if(field.type==="consent"){
+  input='<label class="choice"><input data-field="'+field.id+'" type="checkbox" '+(value?"checked":"")+'><span>'+esc(field.consentText)+'</span></label>';
+ }else{
+  var isMulti=field.type==="multi";
+  var selected=Array.isArray(value)?value:[];
+  input='<div class="choices">'+field.options.map(function(option){
+   var checked=isMulti?selected.indexOf(option)!==-1:value===option;
+   return '<label class="choice"><input data-field="'+field.id+'" type="'+(isMulti?"checkbox":"radio")+'" name="field_'+field.id+'" value="'+esc(option)+'" '+(checked?"checked":"")+'><span>'+esc(option)+'</span></label>';
+  }).join("")+'</div>';
+ }
+ return '<article class="qcard" data-card="'+field.id+'">'+head+input+'</article>';
+}
+function render(){
+ var list=activeSteps();
+ if(stepIndex>=list.length)stepIndex=list.length-1;
+ var step=list[stepIndex];
+ var accents={personal:["#df806d","#fff0eb","📋"],health:["#62866b","#eaf2e9","🩺"],women:["#aa82b9","#f3eafa","🌸"],food:["#d2a342","#fbf3d9","🍓"],drinks:["#559a99","#e7f4f1","🥤"],lifestyle:["#6f8db2","#edf2f8","🌿"],goals:["#d36d94","#f9eaf0","🎯"]};var theme=accents[step.id]||accents.personal;$("formPanel").style.setProperty("--accent",theme[0]);$("formPanel").style.setProperty("--accent-soft",theme[1]);$("stepTitle").textContent=theme[2]+" "+step.title;
+ $("counter").textContent=(stepIndex+1)+" / "+list.length;
+ $("progressBar").style.width=((stepIndex+1)/list.length*100)+"%";
+ $("stepNote").textContent=step.note;
+ $("questions").innerHTML=step.fields.map(renderField).join("");
+ $("backBtn").classList.toggle("hidden",stepIndex===0);
+ $("nextBtn").textContent=stepIndex===list.length-1?"مراجعة الإجابات ✓":"التالي ←";
+ $("errorBox").classList.remove("show");
+}
+function saveCurrent(){
+ var list=activeSteps();
+ var step=list[stepIndex];
+ step.fields.forEach(function(field){
+  var nodes=Array.prototype.slice.call(document.querySelectorAll('[data-field="'+field.id+'"]'));
+  if(field.type==="multi"){
+   answers[field.id]=nodes.filter(function(node){return node.checked;}).map(function(node){return node.value;});
+  }else if(field.type==="single"){
+   var selected=nodes.find(function(node){return node.checked;});
+   answers[field.id]=selected?selected.value:"";
+  }else if(field.type==="consent"){
+   answers[field.id]=!!(nodes[0]&&nodes[0].checked);
+  }else{
+   answers[field.id]=nodes[0]?nodes[0].value.trim():"";
+  }
+ });
+}
+function validateCurrent(){
+ var step=activeSteps()[stepIndex];
+ for(var i=0;i<step.fields.length;i++){
+  var field=step.fields[i];
+  if(!field.required)continue;
+  var value=answers[field.id];
+  var invalid=value===undefined||value===null||value===""||value===false||(Array.isArray(value)&&value.length===0);
+  if(field.type==="number"&&!invalid){
+   var n=Number(value);
+   if(!Number.isFinite(n)||(field.min&&n<field.min)||(field.max&&n>field.max))invalid=true;
+  }
+  if(invalid){
+   var card=document.querySelector('[data-card="'+field.id+'"]');
+   $("errorBox").textContent="محتاجين نكمل إجابة: "+field.label;
+   $("errorBox").classList.add("show");
+   if(card)card.scrollIntoView({behavior:"smooth",block:"center"});
+   return false;
+  }
+ }
+ return true;
+}
+function makeSummary(){
+ var lines=["🌙 MOONDIET — استمارة التعارف والتقييم الأولي","━━━━━━━━━━━━━━━━━━"];
+ activeSteps().forEach(function(step){
+  lines.push("","【"+step.title+"】");
+  step.fields.forEach(function(field){
+   var value=answers[field.id];
+   if(value===undefined||value===null||value===""||value===false||(Array.isArray(value)&&!value.length))return;
+   if(field.type==="consent")return;
+   lines.push("• "+field.label+": "+(Array.isArray(value)?value.join("، "):value));
+  });
+ });
+ lines.push("","تمت الموافقة على إرسال الإجابات عبر واتساب.");
+ return lines.join("\n");
+}
+function showResult(){
+ $("formPanel").classList.add("hidden");
+ $("resultPanel").classList.remove("hidden");
+ $("summary").textContent=makeSummary();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+$("questions").addEventListener("change",function(event){
+ var input=event.target;
+ if(!input||input.type!=="checkbox"||!input.checked)return;
+ var fieldId=input.getAttribute("data-field");
+ var field=null;
+ activeSteps().forEach(function(step){step.fields.forEach(function(item){if(item.id===fieldId)field=item;});});
+ if(!field||!field.exclusive)return;
+ if(field.exclusive.indexOf(input.value)!==-1){
+  document.querySelectorAll('[data-field="'+fieldId+'"]').forEach(function(other){if(other!==input)other.checked=false;});
+ }else{
+  document.querySelectorAll('[data-field="'+fieldId+'"]').forEach(function(other){if(field.exclusive.indexOf(other.value)!==-1)other.checked=false;});
+ }
+});
+$("nextBtn").addEventListener("click",function(){
+ saveCurrent();
+ if(!validateCurrent())return;
+ var list=activeSteps();
+ if(stepIndex<list.length-1){stepIndex++;render();window.scrollTo({top:0,behavior:"smooth"});}
+ else showResult();
+});
+$("backBtn").addEventListener("click",function(){
+ saveCurrent();
+ if(stepIndex>0){stepIndex--;render();window.scrollTo({top:0,behavior:"smooth"});}
+});
+$("sendBtn").addEventListener("click",function(){
+ var link="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(makeSummary());
+ window.location.href=link;
+});
+$("copyBtn").addEventListener("click",function(){
+ var text=makeSummary();
+ if(navigator.clipboard&&navigator.clipboard.writeText){
+  navigator.clipboard.writeText(text).then(function(){$("copyBtn").textContent="تم النسخ ✓";}).catch(function(){fallbackCopy(text);});
+ }else fallbackCopy(text);
+});
+function fallbackCopy(text){
+ var area=document.createElement("textarea");area.value=text;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();
+ try{document.execCommand("copy");$("copyBtn").textContent="تم النسخ ✓";}catch(error){$("copyBtn").textContent="انسخي من المعاينة";}
+ area.remove();
+}
+$("editBtn").addEventListener("click",function(){
+ $("resultPanel").classList.add("hidden");$("formPanel").classList.remove("hidden");
+ stepIndex=activeSteps().length-1;render();window.scrollTo({top:0,behavior:"smooth"});
+});
+$("resetBtn").addEventListener("click",function(){
+ answers={};stepIndex=0;$("resultPanel").classList.add("hidden");$("formPanel").classList.remove("hidden");render();window.scrollTo({top:0,behavior:"smooth"});
+});
+render();
+})();
+</script>
 </body>
 </html>
