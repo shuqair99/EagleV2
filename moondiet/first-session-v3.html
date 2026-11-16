@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f7ef">
+<meta name="description" content="استمارة التعارف والتقييم الغذائي الأولي من MOONDIET">
+<title>MOONDIET | First Nutrition Session</title>
+<style>
+:root{
+ --ink:#263a32;--muted:#718078;--green:#527c64;--green-dark:#355b47;--mint:#e8f1e9;
+ --cream:#fbfaf5;--paper:#fffefa;--line:#e8e9df;--coral:#e58d76;--yellow:#f3d98b;
+ --lav:#eeeaf7;--shadow:0 12px 32px rgba(42,66,50,.07)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 8% 4%,#f4e8df 0,transparent 25%),radial-gradient(circle at 95% 30%,#e8f1e9 0,transparent 27%),var(--cream);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:16px 13px 115px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:4px 5px 15px}
+.brand{font-weight:1000;font-size:27px;letter-spacing:-1.4px;direction:ltr;line-height:1}
+.brand span{color:var(--coral)}
+.brand small{display:block;font-size:9px;letter-spacing:2.1px;color:var(--muted);margin-top:5px}
+.tag{font-size:11px;font-weight:bold;color:var(--green-dark);background:#e9f1e9;border:1px solid #d7e4d8;border-radius:30px;padding:7px 12px}
+.hero{position:relative;overflow:hidden;border-radius:27px;background:linear-gradient(120deg,#e7f0e7 0%,#fff0dc 54%,#f4e8e2 100%);padding:24px 22px 22px;border:1px solid white;box-shadow:var(--shadow);margin-bottom:15px}
+.hero:before,.hero:after{content:"";position:absolute;border:2px solid rgba(82,124,100,.2);border-radius:50%;width:155px;height:155px;left:-70px;top:-86px}
+.hero:after{width:110px;height:110px;left:auto;right:-48px;top:auto;bottom:-68px;border-color:rgba(229,141,118,.28)}
+.eyebrow{font-size:11px;letter-spacing:1px;color:var(--green-dark);font-weight:900}
+.hero h1{font-size:26px;line-height:1.42;margin:7px 0 6px;max-width:560px}
+.hero h1 span{color:#b86f5b}
+.hero p{margin:0;color:#5f6f65;font-size:13px;max-width:590px}
+.hero-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:15px;font-size:11px;color:#52665a}
+.hero-foot b{background:#fffefa;border:1px solid #e5e8dd;border-radius:30px;padding:5px 10px}
+.progress-card{background:#fffefa;border:1px solid var(--line);border-radius:17px;padding:12px 15px;margin:13px 0 16px;box-shadow:0 4px 14px rgba(42,66,50,.035)}
+.progress-top{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted);margin-bottom:7px}
+.progress-top strong{color:var(--green-dark)}
+.progress{height:7px;border-radius:30px;background:#edf0e9;overflow:hidden}
+.progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--green),#a4b991);border-radius:30px;transition:width .2s}
+.section{margin:15px 0 19px}
+.section-head{display:flex;align-items:center;gap:11px;margin:0 2px 10px}
+.section-no{width:34px;height:34px;display:grid;place-items:center;border-radius:12px;background:var(--mint);color:var(--green-dark);font-weight:900;font-size:13px;flex:0 0 34px}
+.section:nth-of-type(odd) .section-no{background:#f7e9df;color:#a96f59}
+.section-head h2{font-size:16px;margin:0;line-height:1.3}
+.section-head p{font-size:10px;color:var(--muted);margin:3px 0 0}
+.question{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:15px 15px 14px;margin:9px 0;box-shadow:0 4px 14px rgba(42,66,50,.025)}
+.q-title{font-size:13px;font-weight:900;margin:0 0 9px;line-height:1.6}
+.q-title .req{color:#c46f5d;margin-right:3px}
+.q-help{font-size:10px;color:var(--muted);font-weight:normal;display:block;margin-top:2px}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.option{display:flex;align-items:flex-start;gap:8px;padding:9px 10px;border:1px solid #e9e9e1;border-radius:11px;background:#fff;font-size:11px;line-height:1.5;cursor:pointer;min-height:39px;transition:background .12s,border .12s}
+.option:has(input:checked){background:#edf4ed;border-color:#a8c2ad;color:#315b43}
+.option input{accent-color:var(--green);margin:3px 0 0;flex:0 0 auto}
+.option.full{grid-column:1/-1}
+.control{width:100%;border:1px solid #dfe4da;background:#fff;border-radius:11px;padding:11px 12px;font:inherit;font-size:13px;color:var(--ink);outline:none}
+.control:focus{border-color:var(--green);box-shadow:0 0 0 3px #527c641c}
+textarea.control{min-height:74px;resize:vertical}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.subfield label{display:block;font-size:11px;font-weight:bold;margin:0 0 5px}
+.hidden{display:none!important}
+.error{display:none;color:#a94e45;background:#fff0ed;border:1px solid #f1d1ca;border-radius:12px;padding:10px 12px;font-size:12px;margin:12px 0}
+.error.show{display:block}
+.consent{background:#f0f3eb;border:1px solid #dfe8da;border-radius:15px;padding:13px;margin-top:14px;font-size:11px}
+.consent label{display:flex;align-items:flex-start;gap:9px}
+.consent input{accent-color:var(--green);margin-top:4px}
+.bottom{position:fixed;z-index:5;bottom:0;left:0;right:0;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(251,250,245,.97) 25%);pointer-events:none}
+.bottom-inner{max-width:730px;margin:0 auto;display:flex;gap:9px;align-items:center;pointer-events:auto}
+.submit{border:0;border-radius:14px;background:var(--green-dark);color:white;padding:14px 17px;font:inherit;font-size:14px;font-weight:900;flex:1;box-shadow:0 8px 18px #355b472b;cursor:pointer}
+.submit:active{transform:translateY(1px)}
+.reset{border:1px solid var(--line);background:#fffefa;color:var(--muted);border-radius:14px;padding:13px 14px;font:inherit;font-size:11px;cursor:pointer}
+.privacy{text-align:center;color:var(--muted);font-size:10px;margin:13px 5px 0}
+#femaleSection{scroll-margin-top:15px}
+@media(max-width:470px){.wrap{padding:12px 10px 112px}.hero{padding:20px 17px}.hero h1{font-size:23px}.options{grid-template-columns:1fr}.two{grid-template-columns:1fr}.question{padding:13px}.tag{font-size:10px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top">
+ <div class="brand">MOON<span>DIET</span><small>YOUR HEALTH • YOUR PACE</small></div>
+ <div class="tag">🌙 First Session</div>
+</header>
+
+<section class="hero">
+ <div class="eyebrow">LET'S START WITH YOU</div>
+ <h1>كل بداية صح… <span>بتبدأ بفهم جسمك</span></h1>
+ <p>جاوب/ي على الأسئلة دي علشان نتعرف على قياساتك، حالتك الصحية، وعاداتك اليومية. إجاباتك هتساعدنا نجهز متابعة مناسبة ليك.</p>
+ <div class="hero-foot"><b>✓ اختيارات سهلة</b><b>✓ حوالي 5–7 دقائق</b><b>✓ إرسال مباشر لواتساب</b></div>
+</section>
+
+<div class="progress-card">
+ <div class="progress-top"><strong>تقدمك في الاستمارة</strong><span id="progressText">0% مكتمل</span></div>
+ <div class="progress"><i id="progressBar"></i></div>
+</div>
+
+<form id="intake" novalidate>
+<section class="section">
+ <div class="section-head"><span class="section-no">01</span><div><h2>بياناتك وقياساتك</h2><p>خلينا نبدأ بالمعلومات الأساسية</p></div></div>
+ <div class="question">
+  <p class="q-title">الاسم بالكامل <span class="req">*</span></p>
+  <input class="control" name="الاسم بالكامل" required maxlength="80" placeholder="اكتب/ي اسمك">
+ </div>
+ <div class="question">
+  <p class="q-title">رقم الموبايل</p>
+  <input class="control" name="رقم الموبايل" type="tel" inputmode="tel" placeholder="01xxxxxxxxx">
+ </div>
+ <div class="question">
+  <p class="q-title">السن والنوع <span class="req">*</span></p>
+  <div class="two">
+   <div class="subfield"><label>السن (سنة)</label><input class="control" name="السن" type="number" min="10" max="100" required placeholder="مثال: 30"></div>
+   <div class="subfield"><label>النوع</label><select class="control" name="النوع" id="gender" required><option value="">اختار/ي</option><option>أنثى</option><option>ذكر</option></select></div>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">الطول والوزن الحالي <span class="req">*</span></p>
+  <div class="two">
+   <div class="subfield"><label>الطول (سم)</label><input class="control" name="الطول" type="number" min="100" max="230" required placeholder="مثال: 165"></div>
+   <div class="subfield"><label>الوزن الحالي (كجم)</label><input class="control" name="الوزن الحالي" type="number" min="25" max="300" step="0.1" required placeholder="مثال: 82.5"></div>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">الوزن المستهدف ومحيط الخصر <span class="q-help">اختياري لو القياسات مش متاحة</span></p>
+  <div class="two">
+   <div class="subfield"><label>الوزن المستهدف (كجم)</label><input class="control" name="الوزن المستهدف" type="number" min="25" max="250" step="0.1" placeholder="اختياري"></div>
+   <div class="subfield"><label>محيط الخصر (سم)</label><input class="control" name="محيط الخصر" type="number" min="30" max="200" placeholder="اختياري"></div>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">طبيعة الشغل والحركة اليومية</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="طبيعة الشغل" value="مكتبي / جلوس معظم اليوم">مكتبي / جلوس معظم اليوم</label>
+   <label class="option"><input type="radio" name="طبيعة الشغل" value="حركة خفيفة">حركة خفيفة</label>
+   <label class="option"><input type="radio" name="طبيعة الشغل" value="حركة متوسطة">حركة متوسطة</label>
+   <label class="option"><input type="radio" name="طبيعة الشغل" value="مجهود بدني كبير">مجهود بدني كبير</label>
+   <label class="option"><input type="radio" name="طبيعة الشغل" value="طالب/ة">طالب/ة</label>
+   <label class="option"><input type="radio" name="طبيعة الشغل" value="لا أعمل حاليًا">لا أعمل حاليًا</label>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><span class="section-no">02</span><div><h2>الحالة الصحية والتاريخ المرضي</h2><p>اختار/ي كل ما ينطبق عليك</p></div></div>
+ <div class="question">
+  <p class="q-title">هل عندك أي أمراض أو تشخيصات طبية؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="لا يوجد">لا يوجد</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="مقاومة إنسولين">مقاومة إنسولين</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="سكر النوع الأول">سكر النوع الأول</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="سكر النوع الثاني">سكر النوع الثاني</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="تكيس المبايض">تكيس المبايض</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="خمول الغدة الدرقية">خمول الغدة الدرقية</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="نشاط الغدة الدرقية">نشاط الغدة الدرقية</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="ضغط مرتفع">ضغط مرتفع</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="كوليسترول / دهون ثلاثية">كوليسترول / دهون ثلاثية</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="أمراض القلب">أمراض القلب</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="أمراض الكلى">أمراض الكلى</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="أمراض الكبد">أمراض الكبد</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="أنيميا / نقص حديد">أنيميا / نقص حديد</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="مشاكل المرارة">مشاكل المرارة</label>
+   <label class="option"><input type="checkbox" name="الحالة الصحية" value="حالة أخرى">حالة أخرى</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل أجريت عمليات جراحية من قبل؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="العمليات الجراحية" value="لا">لا</label>
+   <label class="option"><input type="radio" name="العمليات الجراحية" value="تكميم">تكميم</label>
+   <label class="option"><input type="radio" name="العمليات الجراحية" value="تحويل مسار">تحويل مسار</label>
+   <label class="option"><input type="radio" name="العمليات الجراحية" value="استئصال المرارة">استئصال المرارة</label>
+   <label class="option"><input type="radio" name="العمليات الجراحية" value="عملية أخرى">عملية أخرى</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل بتاخد/ي أدوية بانتظام؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="الأدوية" value="لا أتناول أدوية">لا أتناول أدوية</label>
+   <label class="option"><input type="checkbox" name="الأدوية" value="أدوية السكر">أدوية السكر</label>
+   <label class="option"><input type="checkbox" name="الأدوية" value="أدوية الغدة">أدوية الغدة</label>
+   <label class="option"><input type="checkbox" name="الأدوية" value="أدوية الضغط">أدوية الضغط</label>
+   <label class="option"><input type="checkbox" name="الأدوية" value="أدوية الكوليسترول">أدوية الكوليسترول</label>
+   <label class="option"><input type="checkbox" name="الأدوية" value="أدوية هرمونية">أدوية هرمونية</label>
+   <label class="option"><input type="checkbox" name="الأدوية" value="أدوية أخرى">أدوية أخرى</label>
+  </div>
+  <input class="control" name="تفاصيل الأدوية" style="margin-top:9px" placeholder="اكتب/ي اسم الدواء والجرعة إن أمكن (اختياري)">
+ </div>
+ <div class="question">
+  <p class="q-title">هل بتاخد/ي مكملات أو فيتامينات؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="المكملات" value="لا">لا</label>
+   <label class="option"><input type="checkbox" name="المكملات" value="فيتامين D">فيتامين D</label>
+   <label class="option"><input type="checkbox" name="المكملات" value="فيتامين B12">فيتامين B12</label>
+   <label class="option"><input type="checkbox" name="المكملات" value="حديد">حديد</label>
+   <label class="option"><input type="checkbox" name="المكملات" value="أوميجا 3">أوميجا 3</label>
+   <label class="option"><input type="checkbox" name="المكملات" value="مالتي فيتامين">مالتي فيتامين</label>
+   <label class="option"><input type="checkbox" name="المكملات" value="بروتين / مكمل رياضي">بروتين / مكمل رياضي</label>
+   <label class="option"><input type="checkbox" name="المكملات" value="مكملات أخرى">مكملات أخرى</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل عندك حساسية أو عدم تحمل لأطعمة معينة؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="الحساسية الغذائية" value="لا">لا</label>
+   <label class="option"><input type="checkbox" name="الحساسية الغذائية" value="اللبن ومنتجاته">اللبن ومنتجاته</label>
+   <label class="option"><input type="checkbox" name="الحساسية الغذائية" value="البيض">البيض</label>
+   <label class="option"><input type="checkbox" name="الحساسية الغذائية" value="القمح / الجلوتين">القمح / الجلوتين</label>
+   <label class="option"><input type="checkbox" name="الحساسية الغذائية" value="المكسرات">المكسرات</label>
+   <label class="option"><input type="checkbox" name="الحساسية الغذائية" value="الأسماك والمأكولات البحرية">الأسماك والمأكولات البحرية</label>
+   <label class="option"><input type="checkbox" name="الحساسية الغذائية" value="أطعمة أخرى">أطعمة أخرى</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل بتعاني من مشاكل في الجهاز الهضمي؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="مشاكل الجهاز الهضمي" value="لا">لا</label>
+   <label class="option"><input type="checkbox" name="مشاكل الجهاز الهضمي" value="إمساك">إمساك</label>
+   <label class="option"><input type="checkbox" name="مشاكل الجهاز الهضمي" value="إسهال متكرر">إسهال متكرر</label>
+   <label class="option"><input type="checkbox" name="مشاكل الجهاز الهضمي" value="انتفاخ وغازات">انتفاخ وغازات</label>
+   <label class="option"><input type="checkbox" name="مشاكل الجهاز الهضمي" value="قولون عصبي">قولون عصبي</label>
+   <label class="option"><input type="checkbox" name="مشاكل الجهاز الهضمي" value="حموضة / ارتجاع">حموضة / ارتجاع</label>
+   <label class="option"><input type="checkbox" name="مشاكل الجهاز الهضمي" value="آلام بالمعدة">آلام بالمعدة</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل بتعاني من أعراض متكررة؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="أعراض متكررة" value="لا يوجد">لا يوجد</label>
+   <label class="option"><input type="checkbox" name="أعراض متكررة" value="إرهاق مستمر">إرهاق مستمر</label>
+   <label class="option"><input type="checkbox" name="أعراض متكررة" value="دوخة">دوخة</label>
+   <label class="option"><input type="checkbox" name="أعراض متكررة" value="صداع">صداع</label>
+   <label class="option"><input type="checkbox" name="أعراض متكررة" value="تساقط شعر">تساقط شعر</label>
+   <label class="option"><input type="checkbox" name="أعراض متكررة" value="اضطراب النوم">اضطراب النوم</label>
+   <label class="option"><input type="checkbox" name="أعراض متكررة" value="احتباس سوائل / تورم">احتباس سوائل / تورم</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل أجريت تحاليل خلال آخر 6 شهور؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="التحاليل" value="لا">لا</label>
+   <label class="option"><input type="checkbox" name="التحاليل" value="CBC صورة دم">CBC صورة دم</label>
+   <label class="option"><input type="checkbox" name="التحاليل" value="سكر صائم / تراكمي">سكر صائم / تراكمي</label>
+   <label class="option"><input type="checkbox" name="التحاليل" value="وظائف الغدة">وظائف الغدة</label>
+   <label class="option"><input type="checkbox" name="التحاليل" value="فيتامين D / B12">فيتامين D / B12</label>
+   <label class="option"><input type="checkbox" name="التحاليل" value="Ferritin مخزون الحديد">Ferritin مخزون الحديد</label>
+   <label class="option"><input type="checkbox" name="التحاليل" value="وظائف كبد وكلى">وظائف كبد وكلى</label>
+   <label class="option"><input type="checkbox" name="التحاليل" value="دهون الدم">دهون الدم</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">تفاصيل صحية إضافية <span class="q-help">أي تشخيص أو عملية أو نتيجة تحليل تحب/ي توضّحها</span></p>
+  <textarea class="control" name="تفاصيل صحية إضافية" placeholder="اكتب/ي التفاصيل هنا (اختياري)"></textarea>
+ </div>
+</section>
+
+<section class="section hidden" id="femaleSection">
+ <div class="section-head"><span class="section-no">03</span><div><h2>أسئلة خاصة بالسيدات</h2><p>تظهر عند اختيار النوع: أنثى</p></div></div>
+ <div class="question">
+  <p class="q-title">هل أنتِ حاليًا:</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="الحالة الحالية" value="حامل">حامل</label>
+   <label class="option"><input type="radio" name="الحالة الحالية" value="مرضع">مرضع</label>
+   <label class="option"><input type="radio" name="الحالة الحالية" value="لا ينطبق / لا شيء مما سبق">لا ينطبق / لا شيء مما سبق</label>
+   <label class="option"><input type="radio" name="الحالة الحالية" value="أفضل مناقشة الأمر بشكل خاص">أفضل مناقشة الأمر بشكل خاص</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل الدورة الشهرية منتظمة؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="انتظام الدورة" value="منتظمة">منتظمة</label>
+   <label class="option"><input type="radio" name="انتظام الدورة" value="غير منتظمة">غير منتظمة</label>
+   <label class="option"><input type="radio" name="انتظام الدورة" value="متقطعة">متقطعة</label>
+   <label class="option"><input type="radio" name="انتظام الدورة" value="أفضل مناقشة الأمر بشكل خاص">أفضل مناقشة الأمر بشكل خاص</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل عندك تكيس مبايض أو اضطرابات هرمونية؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="تكيس أو اضطرابات هرمونية" value="لا">لا</label>
+   <label class="option"><input type="radio" name="تكيس أو اضطرابات هرمونية" value="تكيس مبايض">تكيس مبايض</label>
+   <label class="option"><input type="radio" name="تكيس أو اضطرابات هرمونية" value="اضطراب هرموني آخر">اضطراب هرموني آخر</label>
+   <label class="option"><input type="radio" name="تكيس أو اضطرابات هرمونية" value="غير متأكدة">غير متأكدة</label>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><span class="section-no">04</span><div><h2>العادات الغذائية والتفضيلات</h2><p>إيه اللي بتحبه وإيه اللي يناسب يومك؟</p></div></div>
+ <div class="question">
+  <p class="q-title">عادةً بتتناول/ي كام وجبة في اليوم؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="عدد الوجبات" value="وجبة واحدة">وجبة واحدة</label>
+   <label class="option"><input type="radio" name="عدد الوجبات" value="وجبتان">وجبتان</label>
+   <label class="option"><input type="radio" name="عدد الوجبات" value="3 وجبات">3 وجبات</label>
+   <label class="option"><input type="radio" name="عدد الوجبات" value="أكثر من 3">أكثر من 3</label>
+   <label class="option"><input type="radio" name="عدد الوجبات" value="غير منتظم">غير منتظم</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل بتتناول/ي وجبة الإفطار؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="الإفطار" value="يوميًا">يوميًا</label>
+   <label class="option"><input type="radio" name="الإفطار" value="أحيانًا">أحيانًا</label>
+   <label class="option"><input type="radio" name="الإفطار" value="نادرًا">نادرًا</label>
+   <label class="option"><input type="radio" name="الإفطار" value="لا أتناول الإفطار">لا أتناول الإفطار</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">إيه الأكلات اللي بتحب/ي وجودها في النظام؟ <span class="q-help">يمكن اختيار أكتر من إجابة</span></p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="بيض">بيض</label>
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="جبن ومنتجات ألبان">جبن ومنتجات ألبان</label>
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="فول وبقوليات">فول وبقوليات</label>
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="دجاج">دجاج</label>
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="لحوم">لحوم</label>
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="أسماك">أسماك</label>
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="أرز ومكرونة">أرز ومكرونة</label>
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="بطاطس">بطاطس</label>
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="خضروات">خضروات</label>
+   <label class="option"><input type="checkbox" name="الأكلات المفضلة" value="فاكهة">فاكهة</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">إيه الأكلات اللي مش بتحب/يها أو مش مناسبة ليك؟</p>
+  <textarea class="control" name="أكلات غير مفضلة" placeholder="اكتب/ي الأصناف هنا (اختياري)"></textarea>
+ </div>
+ <div class="question">
+  <p class="q-title">بتتناول/ي الحلويات والسكريات قد إيه؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="الحلويات" value="يوميًا">يوميًا</label>
+   <label class="option"><input type="radio" name="الحلويات" value="عدة مرات أسبوعيًا">عدة مرات أسبوعيًا</label>
+   <label class="option"><input type="radio" name="الحلويات" value="مرة أسبوعيًا">مرة أسبوعيًا</label>
+   <label class="option"><input type="radio" name="الحلويات" value="نادرًا">نادرًا</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل بتطلب/ي وجبات سريعة أو أكل جاهز؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="الوجبات السريعة" value="يوميًا">يوميًا</label>
+   <label class="option"><input type="radio" name="الوجبات السريعة" value="3–4 مرات أسبوعيًا">3–4 مرات أسبوعيًا</label>
+   <label class="option"><input type="radio" name="الوجبات السريعة" value="مرة أو مرتين أسبوعيًا">مرة أو مرتين أسبوعيًا</label>
+   <label class="option"><input type="radio" name="الوجبات السريعة" value="نادرًا">نادرًا</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل بتحس/ي بجوع بين الوجبات؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="الجوع بين الوجبات" value="دائمًا">دائمًا</label>
+   <label class="option"><input type="radio" name="الجوع بين الوجبات" value="أحيانًا">أحيانًا</label>
+   <label class="option"><input type="radio" name="الجوع بين الوجبات" value="نادرًا">نادرًا</label>
+   <label class="option"><input type="radio" name="الجوع بين الوجبات" value="لا">لا</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل بتاكل/ي بسبب التوتر أو الزعل أو الملل؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="الأكل العاطفي" value="بشكل متكرر">بشكل متكرر</label>
+   <label class="option"><input type="radio" name="الأكل العاطفي" value="أحيانًا">أحيانًا</label>
+   <label class="option"><input type="radio" name="الأكل العاطفي" value="نادرًا">نادرًا</label>
+   <label class="option"><input type="radio" name="الأكل العاطفي" value="لا">لا</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل بيحصل أحيانًا فقدان سيطرة على كمية الأكل؟ <span class="q-help">السؤال اختياري، وممكن نناقشه بشكل خاص</span></p>
+  <div class="options">
+   <label class="option"><input type="radio" name="فقدان السيطرة على الأكل" value="نعم">نعم</label>
+   <label class="option"><input type="radio" name="فقدان السيطرة على الأكل" value="أحيانًا">أحيانًا</label>
+   <label class="option"><input type="radio" name="فقدان السيطرة على الأكل" value="لا">لا</label>
+   <label class="option"><input type="radio" name="فقدان السيطرة على الأكل" value="أفضل مناقشة الأمر بشكل خاص">أفضل مناقشة الأمر بشكل خاص</label>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><span class="section-no">05</span><div><h2>المياه والمشروبات</h2><p>تقدير بسيط لعادات الشرب اليومية</p></div></div>
+ <div class="question">
+  <p class="q-title">بتشرب/ي مياه قد إيه في اليوم؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="المياه" value="أقل من 3 أكواب">أقل من 3 أكواب</label>
+   <label class="option"><input type="radio" name="المياه" value="3–5 أكواب">3–5 أكواب</label>
+   <label class="option"><input type="radio" name="المياه" value="6–8 أكواب">6–8 أكواب</label>
+   <label class="option"><input type="radio" name="المياه" value="أكثر من 8 أكواب">أكثر من 8 أكواب</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">إيه المشروبات اللي بتتناولها بانتظام؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="المشروبات" value="شاي">شاي</label>
+   <label class="option"><input type="checkbox" name="المشروبات" value="قهوة / نسكافيه">قهوة / نسكافيه</label>
+   <label class="option"><input type="checkbox" name="المشروبات" value="عصائر">عصائر</label>
+   <label class="option"><input type="checkbox" name="المشروبات" value="مشروبات غازية">مشروبات غازية</label>
+   <label class="option"><input type="checkbox" name="المشروبات" value="مشروبات دايت">مشروبات دايت</label>
+   <label class="option"><input type="checkbox" name="المشروبات" value="أعشاب">أعشاب</label>
+   <label class="option"><input type="checkbox" name="المشروبات" value="مشروبات طاقة">مشروبات طاقة</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">بتحلّي المشروبات بإيه؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="تحلية المشروبات" value="سكر عادي">سكر عادي</label>
+   <label class="option"><input type="radio" name="تحلية المشروبات" value="عسل">عسل</label>
+   <label class="option"><input type="radio" name="تحلية المشروبات" value="محلي دايت">محلي دايت</label>
+   <label class="option"><input type="radio" name="تحلية المشروبات" value="بدون سكر">بدون سكر</label>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><span class="section-no">06</span><div><h2>النشاط والنوم ونمط الحياة</h2><p>علشان النظام يناسب ظروف يومك</p></div></div>
+ <div class="question">
+  <p class="q-title">مستوى نشاطك اليومي</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="مستوى النشاط" value="قليل جدًا / جلوس معظم اليوم">قليل جدًا / جلوس معظم اليوم</label>
+   <label class="option"><input type="radio" name="مستوى النشاط" value="خفيف">خفيف</label>
+   <label class="option"><input type="radio" name="مستوى النشاط" value="متوسط">متوسط</label>
+   <label class="option"><input type="radio" name="مستوى النشاط" value="مرتفع">مرتفع</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">هل بتمارس/ي رياضة؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="الرياضة" value="لا أمارس">لا أمارس</label>
+   <label class="option"><input type="checkbox" name="الرياضة" value="مشي">مشي</label>
+   <label class="option"><input type="checkbox" name="الرياضة" value="جيم / مقاومة">جيم / مقاومة</label>
+   <label class="option"><input type="checkbox" name="الرياضة" value="كارديو">كارديو</label>
+   <label class="option"><input type="checkbox" name="الرياضة" value="سباحة">سباحة</label>
+   <label class="option"><input type="checkbox" name="الرياضة" value="رياضة أخرى">رياضة أخرى</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">عدد مرات التمرين أسبوعيًا</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="عدد مرات التمرين" value="لا أتمرن">لا أتمرن</label>
+   <label class="option"><input type="radio" name="عدد مرات التمرين" value="1–2 مرة">1–2 مرة</label>
+   <label class="option"><input type="radio" name="عدد مرات التمرين" value="3–4 مرات">3–4 مرات</label>
+   <label class="option"><input type="radio" name="عدد مرات التمرين" value="5 مرات أو أكثر">5 مرات أو أكثر</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">متوسط عدد ساعات النوم</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="ساعات النوم" value="أقل من 5 ساعات">أقل من 5 ساعات</label>
+   <label class="option"><input type="radio" name="ساعات النوم" value="5–6 ساعات">5–6 ساعات</label>
+   <label class="option"><input type="radio" name="ساعات النوم" value="7–8 ساعات">7–8 ساعات</label>
+   <label class="option"><input type="radio" name="ساعات النوم" value="أكثر من 8 ساعات">أكثر من 8 ساعات</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">جودة النوم</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="جودة النوم" value="جيد ومنتظم">جيد ومنتظم</label>
+   <label class="option"><input type="radio" name="جودة النوم" value="نوم متقطع">نوم متقطع</label>
+   <label class="option"><input type="radio" name="جودة النوم" value="صعوبة في النوم">صعوبة في النوم</label>
+   <label class="option"><input type="radio" name="جودة النوم" value="أستيقظ مرهقًا">أستيقظ مرهقًا</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">مستوى التوتر والضغط النفسي</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="مستوى التوتر" value="منخفض">منخفض</label>
+   <label class="option"><input type="radio" name="مستوى التوتر" value="متوسط">متوسط</label>
+   <label class="option"><input type="radio" name="مستوى التوتر" value="مرتفع">مرتفع</label>
+   <label class="option"><input type="radio" name="مستوى التوتر" value="مرتفع جدًا">مرتفع جدًا</label>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><span class="section-no">07</span><div><h2>تجارب الدايت والهدف من المتابعة</h2><p>آخر جزء قبل إرسال الاستمارة</p></div></div>
+ <div class="question">
+  <p class="q-title">هل جربت أنظمة غذائية قبل كده؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="تجارب الدايت" value="أول تجربة">أول تجربة</label>
+   <label class="option"><input type="radio" name="تجارب الدايت" value="نعم، أكثر من مرة">نعم، أكثر من مرة</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">إيه الأنظمة اللي جربتها؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="أنظمة سابقة" value="حساب السعرات">حساب السعرات</label>
+   <label class="option"><input type="checkbox" name="أنظمة سابقة" value="الصيام المتقطع">الصيام المتقطع</label>
+   <label class="option"><input type="checkbox" name="أنظمة سابقة" value="كيتو">كيتو</label>
+   <label class="option"><input type="checkbox" name="أنظمة سابقة" value="لو كارب">لو كارب</label>
+   <label class="option"><input type="checkbox" name="أنظمة سابقة" value="أنظمة أخرى">أنظمة أخرى</label>
+   <label class="option"><input type="checkbox" name="أنظمة سابقة" value="لم أجرب">لم أجرب</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">إيه أكبر صعوبة واجهتك في الأنظمة السابقة؟</p>
+  <div class="options">
+   <label class="option"><input type="checkbox" name="صعوبات سابقة" value="الجوع المستمر">الجوع المستمر</label>
+   <label class="option"><input type="checkbox" name="صعوبات سابقة" value="الحرمان">الحرمان</label>
+   <label class="option"><input type="checkbox" name="صعوبات سابقة" value="قلة التنوع">قلة التنوع</label>
+   <label class="option"><input type="checkbox" name="صعوبات سابقة" value="صعوبة الالتزام">صعوبة الالتزام</label>
+   <label class="option"><input type="checkbox" name="صعوبات سابقة" value="ثبات الوزن">ثبات الوزن</label>
+   <label class="option"><input type="checkbox" name="صعوبات سابقة" value="استعادة الوزن">استعادة الوزن</label>
+   <label class="option"><input type="checkbox" name="صعوبات سابقة" value="ضيق الوقت">ضيق الوقت</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">إيه هدفك الأساسي؟ <span class="req">*</span></p>
+  <div class="options">
+   <label class="option"><input type="radio" name="الهدف الأساسي" value="خسارة الوزن" required>خسارة الوزن</label>
+   <label class="option"><input type="radio" name="الهدف الأساسي" value="تقليل دهون البطن">تقليل دهون البطن</label>
+   <label class="option"><input type="radio" name="الهدف الأساسي" value="تحسين الصحة العامة">تحسين الصحة العامة</label>
+   <label class="option"><input type="radio" name="الهدف الأساسي" value="تنظيم سكر الدم">تنظيم سكر الدم</label>
+   <label class="option"><input type="radio" name="الهدف الأساسي" value="بناء العضلات">بناء العضلات</label>
+   <label class="option"><input type="radio" name="الهدف الأساسي" value="تثبيت الوزن">تثبيت الوزن</label>
+   <label class="option"><input type="radio" name="الهدف الأساسي" value="تحسين العادات الغذائية">تحسين العادات الغذائية</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">تحب/ي يكون النظام عامل إزاي؟</p>
+  <div class="options">
+   <label class="option"><input type="radio" name="تفضيل النظام" value="مرن وبدائل كثيرة">مرن وبدائل كثيرة</label>
+   <label class="option"><input type="radio" name="تفضيل النظام" value="محدد وواضح">محدد وواضح</label>
+   <label class="option"><input type="radio" name="تفضيل النظام" value="وصفات وأفكار جديدة">وصفات وأفكار جديدة</label>
+   <label class="option"><input type="radio" name="تفضيل النظام" value="مزيج من كل ده">مزيج من كل ده</label>
+  </div>
+ </div>
+ <div class="question">
+  <p class="q-title">أي ظروف أو ملاحظات تحب/ي نعرفها قبل ما نبدأ؟</p>
+  <textarea class="control" name="ملاحظات إضافية" placeholder="اكتب/ي أي تفاصيل إضافية (اختياري)"></textarea>
+ </div>
+</section>
+
+<div class="consent">
+ <label><input type="checkbox" id="consent" required><span>أوافق على إرسال إجاباتي، بما فيها المعلومات الصحية التي اخترت مشاركتها، إلى MOONDIET عبر واتساب.</span></label>
+</div>
+<div class="error" id="errorBox" role="alert"></div>
+<p class="privacy">🔒 الإجابات لا تُحفظ في الموقع. عند الضغط على زر الإرسال، هتفتح رسالة واتساب جاهزة لمراجعتها وإرسالها بنفسك.</p>
+</form>
+</main>
+
+<div class="bottom">
+ <div class="bottom-inner">
+  <button type="button" class="reset" id="resetBtn">مسح الإجابات</button>
+  <button type="submit" form="intake" class="submit">إرسال الإجابات إلى واتساب MOONDIET ←</button>
+ </div>
+</div>
+
+<script>
+(function(){
+ const form=document.getElementById('intake');
+ const phone='201225206376';
+ const progressBar=document.getElementById('progressBar');
+ const progressText=document.getElementById('progressText');
+ const errorBox=document.getElementById('errorBox');
+ const gender=document.getElementById('gender');
+ const femaleSection=document.getElementById('femaleSection');
+
+ function updateGender(){
+  const show=gender.value==='أنثى';
+  femaleSection.classList.toggle('hidden',!show);
+  if(!show){femaleSection.querySelectorAll('input').forEach(function(x){x.checked=false;});}
+  updateProgress();
+ }
+ gender.addEventListener('change',updateGender);
+
+ function questionGroups(){
+  return Array.from(form.querySelectorAll('.question'));
+ }
+ function updateProgress(){
+  const groups=questionGroups();
+  let answered=0;
+  groups.forEach(function(group){
+   const controls=Array.from(group.querySelectorAll('input,select,textarea'));
+   const meaningful=controls.filter(function(c){return c.type!=='hidden';});
+   const done=meaningful.some(function(c){
+    if(c.type==='checkbox'||c.type==='radio')return c.checked;
+    return String(c.value||'').trim().length>0;
+   });
+   if(done)answered++;
+  });
+  const visible=groups.filter(function(g){return !g.closest('.hidden');}).length;
+  const visibleAnswered=groups.filter(function(g){return !g.closest('.hidden')&&Array.from(g.querySelectorAll('input,select,textarea')).some(function(c){return c.checked||String(c.value||'').trim().length>0;});}).length;
+  const percent=visible?Math.round(visibleAnswered/visible*100):0;
+  progressBar.style.width=percent+'%';
+  progressText.textContent=percent+'% مكتمل';
+ }
+ form.addEventListener('input',updateProgress);
+ form.addEventListener('change',updateProgress);
+
+ function buildMessage(){
+  const lines=['🌙 MOONDIET | استمارة التعارف والتقييم الأولي','━━━━━━━━━━━━━━━━━━━━'];
+  const fields=Array.from(form.querySelectorAll('input[name],select[name],textarea[name]'));
+  const done=new Set();
+  fields.forEach(function(field){
+   if(field.type==='radio'||field.type==='checkbox'){
+    const key=field.name;
+    if(done.has(key))return;
+    done.add(key);
+    const selected=Array.from(form.querySelectorAll('[name="'+CSS.escape(key)+'"]:checked')).map(function(x){return x.value;});
+    if(selected.length)lines.push('• '+key+': '+selected.join('، '));
+   }else{
+    const value=String(field.value||'').trim();
+    if(value)lines.push('• '+field.name+': '+value);
+   }
+  });
+  lines.push('━━━━━━━━━━━━━━━━━━━━','تم إرسال الاستمارة من خلال MOONDIET 🌙');
+  return lines.join('\n');
+ }
+
+ form.addEventListener('submit',function(e){
+  e.preventDefault();
+  errorBox.classList.remove('show');
+  if(!form.reportValidity())return;
+  if(!document.getElementById('consent').checked){
+   errorBox.textContent='لازم تأكدي موافقتك على إرسال الإجابات قبل الإرسال.';
+   errorBox.classList.add('show');
+   document.getElementById('consent').scrollIntoView({behavior:'smooth',block:'center'});
+   return;
+  }
+  const message=buildMessage();
+  const url='https://wa.me/'+phone+'?text='+encodeURIComponent(message);
+  window.location.href=url;
+ });
+
+ document.getElementById('resetBtn').addEventListener('click',function(){
+  if(!confirm('متأكدة إنك عايزة تمسحي كل الإجابات؟'))return;
+  form.reset();updateGender();updateProgress();window.scrollTo({top:0,behavior:'smooth'});
+ });
+ updateGender();
+ updateProgress();
+})();
+</script>
+</body>
+</html>
