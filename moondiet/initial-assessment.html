@@ -107,7 +107,7 @@ function render(){
   if(f.type==='text'||f.type==='number'||f.type==='tel')input='<input class="field" type="'+f.type+'" name="q" data-id="'+esc(f.id)+'" value="'+esc(val||'')+'" placeholder="'+esc(f.placeholder||'')+'" '+(f.required?'required':'')+'>';
   else if(f.type==='textarea')input='<textarea class="field fieldarea" data-id="'+esc(f.id)+'" placeholder="'+esc(f.placeholder||'')+'">'+esc(val||'')+'</textarea>';
   else if(f.type==='agree')input='<label class="opt"><input type="checkbox" data-id="'+esc(f.id)+'" '+(val?'checked':'')+'><span>'+esc(f.label)+'</span></label>';
-  else {const multi=f.type==='check',chosen=Array.isArray(val)?val:[];input='<div class="opts">'+f.options.map(o=>'<label class="opt"><input type="'+(multi?'checkbox':'radio')+'" name="q_'+i+'" data-id="'+esc(f.id)+'" value="'+esc(o)+'" '+(multi?chosen.includes(o):val===o?'checked':'')+'><span>'+esc(o)+'</span></label>').join('')+'</div>';}
+  else {const multi=f.type==='check',chosen=Array.isArray(val)?val:[];input='<div class="opts">'+f.options.map(o=>'<label class="opt"><input type="'+(multi?'checkbox':'radio')+'" name="q_'+i+'" data-id="'+esc(f.id)+'" value="'+esc(o)+'" '+((multi&&chosen.includes(o))||(!multi&&val===o))?'checked':''+'><span>'+esc(o)+'</span></label>').join('')+'</div>';}
   return '<section class="q"><div class="qt">'+(i+1)+'. '+esc(f.id)+(f.optional?'<span class="sub">اختياري</span>':f.required?'<span class="sub">مطلوب</span>':'')+'</div>'+input+'</section>';
  }).join('');
 }
