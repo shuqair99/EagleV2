@@ -574,7 +574,19 @@ textarea.control{min-height:74px;resize:vertical}
   progressText.textContent=percent+'% مكتمل';
  }
  form.addEventListener('input',updateProgress);
- form.addEventListener('change',updateProgress);
+ form.addEventListener('change',function(e){
+  const target=e.target;
+  if(target && target.type==='checkbox' && target.name){
+   const group=Array.from(form.querySelectorAll('input[type="checkbox"][name="'+CSS.escape(target.name)+'"]'));
+   const noneValues=['لا','لا يوجد','لا أتناول أدوية','لم أجرب','لا أمارس'];
+   if(target.checked && noneValues.includes(target.value)){
+    group.forEach(function(item){if(item!==target)item.checked=false;});
+   }else if(target.checked){
+    group.forEach(function(item){if(noneValues.includes(item.value))item.checked=false;});
+   }
+  }
+  updateProgress();
+ });
 
  function buildMessage(){
   const lines=['🌙 MOONDIET | استمارة التعارف والتقييم الأولي','━━━━━━━━━━━━━━━━━━━━'];
