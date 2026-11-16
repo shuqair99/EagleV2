@@ -41,13 +41,13 @@ button,input,textarea{font:inherit}
 .progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--green),#93b18f);border-radius:20px;transition:width .25s}
 .step-note{padding:9px 12px;border-radius:12px;background:#f6f4ec;color:#68746b;font-size:11px;margin-bottom:15px}
 .questions{display:grid;gap:10px}
-.qcard{border:1px solid var(--line);border-radius:17px;padding:14px;background:#fff}
+.qcard{border:1px solid var(--line);border-right:4px solid var(--accent,var(--green));border-radius:17px;padding:14px;background:linear-gradient(135deg,#fff 0%,var(--accent-soft,#fff) 100%);box-shadow:0 3px 12px rgba(45,62,48,.035)}
 .qtitle{font-size:13px;font-weight:900;line-height:1.55;margin:0 0 9px}
 .qmeta{display:inline-block;color:#8b948c;font-size:10px;font-weight:500;margin-right:5px}
 .req{color:#d96d5d}
 .choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 .choice{display:flex;align-items:flex-start;gap:8px;min-height:42px;padding:9px 10px;border:1px solid #e8e9e2;border-radius:11px;background:#fdfdfa;font-size:12px;line-height:1.45;cursor:pointer;transition:.15s}
-.choice:has(input:checked){background:var(--green-soft);border-color:#a9c1a8;color:#34533d}
+.choice:has(input:checked){background:var(--accent-soft,var(--green-soft));border-color:var(--accent,var(--green));color:var(--ink);box-shadow:0 0 0 1px var(--accent,var(--green)) inset}
 .choice input{margin:3px 0 0;accent-color:var(--green);flex:0 0 auto}
 .choice:focus-within{outline:2px solid #9bb99b;outline-offset:2px}
 .field{width:100%;min-height:44px;border:1px solid #dfe4dc;border-radius:11px;background:#fdfdfa;padding:10px 12px;color:var(--ink);font-size:13px;outline:none}
@@ -59,7 +59,7 @@ textarea.field{min-height:78px;resize:vertical}
 .error.show{display:block}
 .actions{display:flex;gap:8px;margin-top:17px}
 .btn{border:0;border-radius:13px;min-height:47px;padding:11px 15px;font-size:13px;font-weight:900;cursor:pointer}
-.btn-main{background:var(--green);color:white;flex:1;box-shadow:0 7px 15px rgba(73,107,86,.18)}
+.btn-main{background:linear-gradient(100deg,var(--accent,var(--green)),#496b56);color:white;flex:1;box-shadow:0 7px 15px rgba(73,107,86,.18)}
 .btn-main:active{transform:translateY(1px)}
 .btn-back{background:#f1f2ed;color:#667268;min-width:92px}
 .btn:focus-visible{outline:3px solid #c7a76a;outline-offset:2px}
@@ -227,7 +227,7 @@ function render(){
  var list=activeSteps();
  if(stepIndex>=list.length)stepIndex=list.length-1;
  var step=list[stepIndex];
- $("stepTitle").textContent=step.title;
+ var accents={personal:["#df806d","#fff0eb","📋"],health:["#62866b","#eaf2e9","🩺"],women:["#aa82b9","#f3eafa","🌸"],food:["#d2a342","#fbf3d9","🍓"],drinks:["#559a99","#e7f4f1","🥤"],lifestyle:["#6f8db2","#edf2f8","🌿"],goals:["#d36d94","#f9eaf0","🎯"]};var theme=accents[step.id]||accents.personal;$("formPanel").style.setProperty("--accent",theme[0]);$("formPanel").style.setProperty("--accent-soft",theme[1]);$("stepTitle").textContent=theme[2]+" "+step.title;
  $("counter").textContent=(stepIndex+1)+" / "+list.length;
  $("progressBar").style.width=((stepIndex+1)/list.length*100)+"%";
  $("stepNote").textContent=step.note;
