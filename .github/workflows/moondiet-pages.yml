@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - ".github/workflows/moondiet-pages.yml"
+      - "docs/**"
   workflow_dispatch:
 
 permissions:
